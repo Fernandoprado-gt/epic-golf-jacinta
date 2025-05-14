@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import LeadForm from "@/components/LeadForm";
@@ -13,7 +12,7 @@ import {
   Users, 
   Dumbbell, 
   Anchor, 
-  Pool
+  Waves
 } from "lucide-react";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -47,12 +46,6 @@ const galleryImages = [
     src: "https://images.unsplash.com/photo-1591088398332-8a7791972843?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
     alt: "Rooftop Gourmet",
     caption: "Rooftop Gourmet",
-    category: "Lazer"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1572120360610-d971b9d7767c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    alt: "Spa",
-    caption: "Spa",
     category: "Lazer"
   },
   {
@@ -197,7 +190,7 @@ const Index = () => {
               description="Serviço de Balsa exclusivo para acesso à praia da Barra."
             />
             <BenefitCard 
-              icon={Pool}
+              icon={Waves}
               title="Gardens e Coberturas com Piscina"
               description="Unidades Garden e Coberturas com piscinas privativas."
             />
