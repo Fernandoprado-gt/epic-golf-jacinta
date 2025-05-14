@@ -10,48 +10,93 @@ import FaqSection from "@/components/FaqSection";
 import { MapPin, Building, Users, Dumbbell, Anchor, Waves } from "lucide-react";
 import { Toaster } from "@/components/ui/sonner";
 
-// Mock Gallery Images
-const galleryImages = [{
-  src: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-  alt: "Fachada do Epic Golf Residence",
-  caption: "Fachada por Feu Arquitetura",
-  category: "Fachada"
-}, {
-  src: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1175&q=80",
-  alt: "Paisagismo do Epic Golf Residence",
-  caption: "Paisagismo por Benedito Abbud",
-  category: "Paisagismo"
-}, {
-  src: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-  alt: "Design de interiores do Epic Golf Residence",
-  caption: "Design de interiores por Carlos Rossi",
-  category: "Interiores"
-}, {
-  src: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-  alt: "Piscina com raia de 25m",
-  caption: "Piscina com raia de 25m",
-  category: "Lazer"
-}, {
-  src: "https://images.unsplash.com/photo-1591088398332-8a7791972843?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
-  alt: "Rooftop Gourmet",
-  caption: "Rooftop Gourmet",
-  category: "Lazer"
-}, {
-  src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-  alt: "Planta do Apartamento",
-  caption: "Planta do Apartamento",
-  category: "Plantas"
-}, {
-  src: "https://images.unsplash.com/photo-1600573472591-559339dab952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-  alt: "Planta do Garden",
-  caption: "Planta do Garden",
-  category: "Plantas"
-}, {
-  src: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-  alt: "Planta da Cobertura",
-  caption: "Planta da Cobertura",
-  category: "Plantas"
-}];
+// Imagens da Galeria atualizadas
+const galleryImages = [
+  {
+    src: "/lovable-uploads/71122c7c-3b6c-4618-95ea-ab562119c256.png",
+    alt: "Fachada do Epic Golf Residence",
+    caption: "Fachada por Feu Arquitetura",
+    category: "Fachada"
+  },
+  {
+    src: "/lovable-uploads/526c0df1-1bcf-4f5c-b4a6-4ca9aee138a5.png",
+    alt: "Fachada lateral do Epic Golf Residence",
+    caption: "Fachada lateral com vista para o jardim",
+    category: "Fachada"
+  },
+  {
+    src: "/lovable-uploads/19d0ee2a-2a7b-461d-932d-8eea0b815d46.png",
+    alt: "Vista da fachada ao entardecer",
+    caption: "Vista da fachada ao entardecer",
+    category: "Fachada"
+  },
+  {
+    src: "/lovable-uploads/e65b4822-149a-458a-9e01-e85b1ccfaa13.png",
+    alt: "Entrada do condomínio",
+    caption: "Entrada exclusiva com paisagismo por Benedito Abbud",
+    category: "Fachada"
+  },
+  {
+    src: "/lovable-uploads/d27c3604-a410-4958-a606-9fe0ef616a42.png",
+    alt: "Piscina com vista para o prédio",
+    caption: "Piscina com raia de 25m",
+    category: "Lazer"
+  },
+  {
+    src: "/lovable-uploads/c34c878b-be24-404c-a7aa-07152a883d62.png",
+    alt: "Piscina com iluminação noturna",
+    caption: "Piscina com iluminação noturna",
+    category: "Lazer"
+  },
+  {
+    src: "/lovable-uploads/cf254fc1-7924-4967-9f06-23a52122f72b.png",
+    alt: "Área da piscina com espreguiçadeiras",
+    caption: "Área de relaxamento com espreguiçadeiras",
+    category: "Lazer"
+  },
+  {
+    src: "/lovable-uploads/673dbfb1-0de6-4fea-93d3-7fe4a191cb6c.png",
+    alt: "Deck da piscina com palmeiras",
+    caption: "Deck da piscina com paisagismo tropical",
+    category: "Lazer"
+  },
+  {
+    src: "/lovable-uploads/d5a582a1-b25f-4757-9ecf-fbeb9907b36e.png",
+    alt: "Quadra de beach tênis",
+    caption: "Quadra de beach tênis exclusiva",
+    category: "Lazer"
+  },
+  {
+    src: "/lovable-uploads/80d8bf91-11b5-4ed1-91e6-cef13abe7740.png",
+    alt: "Área gourmet ao ar livre",
+    caption: "Área gourmet com vista para a piscina",
+    category: "Lazer"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    alt: "Perspectiva artística da fachada",
+    caption: "Perspectiva artística da fachada",
+    category: "Fachada"
+  }, 
+  {
+    src: "https://images.unsplash.com/photo-1600573472591-559339dab952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    alt: "Planta do Garden",
+    caption: "Planta do Garden de até 182m² com piscina privativa",
+    category: "Plantas"
+  }, 
+  {
+    src: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    alt: "Planta da Cobertura",
+    caption: "Planta da Cobertura de até 208m²",
+    category: "Plantas"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+    alt: "Planta do Apartamento",
+    caption: "Planta do Apartamento Padrão",
+    category: "Plantas"
+  }
+];
 
 // FAQ Items
 const faqItems = [{
