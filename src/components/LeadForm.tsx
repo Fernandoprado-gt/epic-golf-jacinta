@@ -1,43 +1,14 @@
 
-import { useState } from "react";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import * as z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { toast } from "sonner";
-import { ArrowRight } from "lucide-react";
+import { Form } from "@/components/ui/form";
 
-const formSchema = z.object({
-  name: z.string().min(2, {
-    message: "O nome deve ter pelo menos 2 caracteres.",
-  }),
-  whatsapp: z
-    .string()
-    .min(10, { message: "WhatsApp inválido" })
-    .refine((val) => /^[0-9]+$/.test(val), {
-      message: "WhatsApp deve conter apenas números",
-    }),
-  interest: z.string({
-    required_error: "Por favor selecione seu interesse.",
-  }),
-});
+import { leadFormSchema, LeadFormValues } from "@/components/form/leadFormSchema";
+import { useLeadFormSubmit } from "@/hooks/useLeadFormSubmit";
+import FormTextField from "@/components/form/FormTextField";
+import InterestSelect from "@/components/form/InterestSelect";
+import SubmitButton from "@/components/form/SubmitButton";
 
 interface LeadFormProps {
   className?: string;
@@ -45,10 +16,8 @@ interface LeadFormProps {
 }
 
 const LeadForm = ({ className, onDark = false }: LeadFormProps) => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<LeadFormValues>({
+    resolver: zodResolver(leadFormSchema),
     defaultValues: {
       name: "",
       whatsapp: "",
@@ -56,29 +25,7 @@ const LeadForm = ({ className, onDark = false }: LeadFormProps) => {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      
-      // Open WhatsApp with pre-filled message
-      const message = "Olá, acabei de me cadastrar na página do Epic Golf Residence e gostaria de receber mais informações.";
-      const encodedMessage = encodeURIComponent(message);
-      const whatsAppUrl = `https://wa.me/5521988384869?text=${encodedMessage}`;
-      
-      toast.success("Formulário enviado com sucesso!", {
-        description: "Você será redirecionado para o WhatsApp em instantes.",
-      });
-      
-      setTimeout(() => {
-        window.open(whatsAppUrl, "_blank");
-      }, 1500);
-      
-      form.reset();
-    }, 1000);
-  }
+  const { isSubmitting, onSubmit } = useLeadFormSubmit(form);
 
   return (
     <Form {...form}>
@@ -97,101 +44,31 @@ const LeadForm = ({ className, onDark = false }: LeadFormProps) => {
           Receba mais informações
         </h3>
         
-        <FormField
+        <FormTextField
           control={form.control}
           name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className={cn(
-                "text-base font-medium",
-                onDark ? "text-white" : "text-epic-black"
-              )}>
-                Nome
-              </FormLabel>
-              <FormControl>
-                <Input 
-                  placeholder="Seu nome completo" 
-                  {...field} 
-                  className={cn(
-                    "py-5 md:py-6 text-base transition-all focus:ring-epic-gold",
-                    onDark ? "bg-white/20 text-white placeholder:text-white/70 border-white/30" : "border-epic-blue/20"
-                  )}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
+          label="Nome"
+          placeholder="Seu nome completo"
+          onDark={onDark}
         />
         
-        <FormField
+        <FormTextField
           control={form.control}
           name="whatsapp"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className={cn(
-                "text-base font-medium",
-                onDark ? "text-white" : "text-epic-black"
-              )}>
-                WhatsApp
-              </FormLabel>
-              <FormControl>
-                <Input 
-                  placeholder="(21) 98888-8888" 
-                  {...field} 
-                  className={cn(
-                    "py-5 md:py-6 text-base transition-all focus:ring-epic-gold",
-                    onDark ? "bg-white/20 text-white placeholder:text-white/70 border-white/30" : "border-epic-blue/20"
-                  )}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
+          label="WhatsApp"
+          placeholder="(21) 98888-8888"
+          onDark={onDark}
         />
         
-        <FormField
+        <InterestSelect
           control={form.control}
-          name="interest"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className={cn(
-                "text-base font-medium",
-                onDark ? "text-white" : "text-epic-black"
-              )}>
-                Interesse
-              </FormLabel>
-              <Select onValueChange={field.onChange} defaultValue={field.value}>
-                <FormControl>
-                  <SelectTrigger className={cn(
-                    "py-5 md:py-6 text-base transition-all",
-                    onDark ? "bg-white/20 text-white border-white/30" : "border-epic-blue/20"
-                  )}>
-                    <SelectValue placeholder="Selecione seu interesse" />
-                  </SelectTrigger>
-                </FormControl>
-                <SelectContent>
-                  <SelectItem value="apartamento">Apartamento</SelectItem>
-                  <SelectItem value="garden">Garden</SelectItem>
-                  <SelectItem value="cobertura">Cobertura</SelectItem>
-                  <SelectItem value="investimento">Investimento</SelectItem>
-                </SelectContent>
-              </Select>
-              <FormMessage />
-            </FormItem>
-          )}
+          onDark={onDark}
         />
         
-        <Button 
-          type="submit" 
-          disabled={isSubmitting}
-          className={cn(
-            "w-full bg-epic-gold hover:bg-epic-blue text-white font-semibold py-5 md:py-6 text-base transition-all duration-300 mt-2 shadow-md hover:shadow-lg btn-hover-effect",
-            onDark ? "hover:bg-white hover:text-epic-blue" : ""
-          )}
-        >
-          {isSubmitting ? "Enviando..." : "Enviar"}
-          {!isSubmitting && <ArrowRight className="h-5 w-5" />}
-        </Button>
+        <SubmitButton
+          isSubmitting={isSubmitting}
+          onDark={onDark}
+        />
       </form>
     </Form>
   );
