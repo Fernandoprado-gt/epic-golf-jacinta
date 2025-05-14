@@ -123,7 +123,12 @@ const Header = ({
         </div>
         
         <div className="hidden md:block">
-          <WhatsAppButton variant="outline" size="sm" className={scrolled ? "border-epic-gold text-epic-gold hover:text-white" : "border-white text-white"} />
+          <WhatsAppButton 
+            size="sm" 
+            className="py-2 px-4 text-sm"
+            variant={scrolled ? "default" : "default"}
+            inverted={!scrolled}
+          />
         </div>
         
         <div className="md:hidden">

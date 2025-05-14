@@ -8,13 +8,15 @@ interface WhatsAppButtonProps {
   variant?: "default" | "outline" | "ghost";
   size?: "default" | "sm" | "lg" | "icon";
   customMessage?: string;
+  inverted?: boolean;
 }
 
 const WhatsAppButton = ({ 
   className, 
   variant = "default", 
   size = "default",
-  customMessage
+  customMessage,
+  inverted = false
 }: WhatsAppButtonProps) => {
   const handleWhatsAppClick = () => {
     const message = customMessage || "";
@@ -29,7 +31,10 @@ const WhatsAppButton = ({
       size={size}
       onClick={handleWhatsAppClick}
       className={cn(
-        "bg-epic-gold hover:bg-epic-blue text-white font-semibold flex items-center gap-2 py-6 px-5 text-base transition-all duration-300 shadow-md hover:shadow-lg btn-hover-effect",
+        "font-semibold flex items-center gap-2 py-6 px-5 text-base transition-all duration-300 shadow-md hover:shadow-lg btn-hover-effect",
+        inverted 
+          ? "bg-white text-epic-blue hover:bg-epic-gold hover:text-white" 
+          : "bg-epic-gold text-white hover:bg-white hover:text-epic-blue",
         className
       )}
     >
