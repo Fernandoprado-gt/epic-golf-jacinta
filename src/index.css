@@ -98,8 +98,13 @@
     @apply border-border;
   }
 
+  html {
+    @apply scroll-smooth;
+  }
+
   body {
     @apply bg-background text-foreground font-montserrat text-epic-black;
+    scroll-behavior: smooth;
   }
 
   h1, h2, h3, h4, h5, h6 {

@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import LeadForm from "@/components/LeadForm";
@@ -162,7 +161,7 @@ const Index = () => {
       <Header />
 
       {/* Hero Section */}
-      <section className="h-screen relative overflow-hidden">
+      <section id="hero" className="h-screen relative overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{
         backgroundImage: "url('https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')"
       }}>
@@ -203,7 +202,7 @@ const Index = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-24 bg-epic-gray">
+      <section id="benefits" className="py-24 bg-epic-gray">
         <div className="container max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-epic-blue mb-4">Benefícios Exclusivos</h2>
@@ -228,7 +227,7 @@ const Index = () => {
       </section>
       
       {/* Gallery Section */}
-      <section className="py-24 bg-white">
+      <section id="gallery" className="py-24 bg-white">
         <div className="container max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-epic-blue mb-4">Galeria de Imagens</h2>
@@ -246,7 +245,7 @@ const Index = () => {
       </section>
       
       {/* Location Section */}
-      <section className="py-24 bg-epic-blue text-white">
+      <section id="location" className="py-24 bg-epic-blue text-white">
         <div className="container max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Localização Privilegiada</h2>
@@ -299,7 +298,7 @@ const Index = () => {
       </section>
       
       {/* FAQ Section */}
-      <section className="py-24 bg-epic-gray">
+      <section id="faq" className="py-24 bg-epic-gray">
         <div className="container max-w-3xl mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-bold text-epic-blue mb-4">Perguntas Frequentes</h2>
@@ -347,4 +346,3 @@ const Index = () => {
     </div>;
 };
 export default Index;
-
