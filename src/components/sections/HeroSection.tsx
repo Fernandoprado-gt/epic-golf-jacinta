@@ -1,4 +1,5 @@
 
+
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
@@ -38,7 +39,7 @@ const HeroSection = () => {
           <div className="w-full md:w-5/12 md:max-w-md rounded-lg overflow-hidden">
             <AspectRatio ratio={3/4} className="h-full">
               <img 
-                src="/lovable-uploads/72148c10-3aa2-4bde-bcd6-6578b5b3d194.png" 
+                src="/lovable-uploads/80a56c44-7169-4a84-a7b7-5d8c7d4666c2.png" 
                 alt="Epic Golf Residence" 
                 className="w-full h-full object-cover rounded-lg"
               />
@@ -60,3 +61,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
