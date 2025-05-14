@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
@@ -109,6 +108,10 @@
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-montserrat font-bold;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
   }
 
   img {
@@ -144,6 +147,15 @@
 /* Section transitions */
 .section-transition {
   @apply transition-all duration-500 ease-in-out;
+}
+
+/* Text wrapping improvements for mobile */
+.whitespace-normal {
+  white-space: normal !important;
+}
+
+.hyphens-none {
+  hyphens: none !important;
 }
 
 /* Responsive containers */
