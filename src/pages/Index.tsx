@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import LeadForm from "@/components/LeadForm";
@@ -70,6 +71,66 @@ const galleryImages = [
     alt: "Área gourmet ao ar livre",
     caption: "Área gourmet com vista para a piscina",
     category: "Lazer"
+  },
+  {
+    src: "/lovable-uploads/2c4d4ec6-a113-42a1-80e8-5a1e9428f539.png",
+    alt: "Piscina coberta",
+    caption: "Piscina coberta com vista para o jardim",
+    category: "Lazer"
+  },
+  {
+    src: "/lovable-uploads/00f5c2a3-7f8a-4407-9eba-b7ccfe448236.png",
+    alt: "Sala de jogos",
+    caption: "Game room com consoles de última geração",
+    category: "Lazer"
+  },
+  {
+    src: "/lovable-uploads/46fd8de0-c7fc-4c20-b08b-f0fbf1e517d5.png",
+    alt: "Espaço kids",
+    caption: "Espaço kids com piscina de bolinhas",
+    category: "Lazer"
+  },
+  {
+    src: "/lovable-uploads/04a8182c-33cc-4aba-ade7-72a4d58dcd98.png",
+    alt: "Sala de boxe",
+    caption: "Sala de boxe profissional",
+    category: "Fitness"
+  },
+  {
+    src: "/lovable-uploads/00ff0320-11ba-4fc8-918f-db74fcaa23e8.png",
+    alt: "Piscina na cobertura",
+    caption: "Cobertura com piscina privativa",
+    category: "Coberturas"
+  },
+  {
+    src: "/lovable-uploads/d33abfeb-a56b-49c6-b1cf-2a0e17a69686.png",
+    alt: "Quadra poliesportiva",
+    caption: "Quadra poliesportiva com marcação multiesporte",
+    category: "Lazer"
+  },
+  {
+    src: "/lovable-uploads/258be91a-fb4b-4ead-91b7-c5922dd597ab.png",
+    alt: "Quadra de tênis",
+    caption: "Quadra de tênis profissional",
+    category: "Lazer"
+  },
+  {
+    src: "/lovable-uploads/4a343faf-06b0-484e-976a-9149a3ea4c89.png",
+    alt: "Quadra de beach volley",
+    caption: "Quadra de beach volley",
+    category: "Lazer"
+  },
+  {
+    src: "/lovable-uploads/e5e659ae-673e-4495-92cb-688dd46afbdb.png",
+    alt: "Varanda com vista panorâmica",
+    caption: "Varanda gourmet com vista panorâmica",
+    category: "Apartamentos"
+  },
+  {
+    src: "/lovable-uploads/c2329e30-8c6a-499f-903a-5b0c4f472982.png",
+    alt: "Interior do apartamento",
+    caption: "Living integrado com cozinha gourmet",
+    category: "Apartamentos"
   }
 ];
 
@@ -286,3 +347,4 @@ const Index = () => {
     </div>;
 };
 export default Index;
+
