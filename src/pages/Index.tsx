@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import LeadForm from "@/components/LeadForm";
@@ -160,7 +161,7 @@ const Index = () => {
       <Toaster position="top-center" />
       <Header />
 
-      {/* Hero Section with new background image */}
+      {/* Hero Section with improved mobile typography */}
       <section id="hero" className="h-screen relative overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed" style={{
           backgroundImage: "url('/lovable-uploads/42b4fad2-b4dd-4564-b5b2-38801ae5153d.png')"
@@ -169,16 +170,16 @@ const Index = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-epic-blue/60 to-epic-blue/70"></div>
         </div>
         
-        <div className="container max-w-7xl mx-auto px-6 h-full flex flex-col justify-center relative z-10">
+        <div className="container max-w-7xl mx-auto px-4 sm:px-6 h-full flex flex-col justify-center relative z-10">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-16">
             <div className="w-full md:w-7/12 text-center md:text-left animate-fade-in">
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4">
+              <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight md:leading-tight mb-4 tracking-tight">
                 Viva além do extraordinário no Epic Golf Residence
               </h1>
-              <p className="text-epic-gold text-lg md:text-xl mb-4">
+              <p className="text-epic-gold text-base sm:text-lg md:text-xl mb-4">
                 Cada detalhe pensado para surpreender você todos os dias
               </p>
-              <h2 className="text-xl md:text-2xl text-epic-gold font-medium mb-6">
+              <h2 className="text-lg sm:text-xl md:text-2xl text-epic-gold font-medium mb-6">
                 Apartamentos, Gardens e Coberturas de até 208m² no ponto mais nobre da Barra: o Golfe Olímpico
               </h2>
               <div className="hidden md:block mt-8">
@@ -346,4 +347,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
