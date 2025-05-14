@@ -14,7 +14,8 @@ const HeroSection = () => {
       
       <div className="container max-w-7xl mx-auto px-5 sm:px-6 relative z-10 w-full">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-16">
-          <div className="w-full md:w-7/12 text-center md:text-left animate-fade-in">
+          {/* Text content - Added md:pt-12 to move text down only on desktop */}
+          <div className="w-full md:w-7/12 text-center md:text-left md:pt-12 animate-fade-in">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4 tracking-tight break-normal hyphens-none">
               Viva além do extraordinário no Epic Golf Residence
             </h1>
