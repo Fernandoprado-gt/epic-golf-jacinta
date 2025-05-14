@@ -21,8 +21,8 @@ const LocationSection = () => {
             <LocationMap />
           </div>
           
-          <div className="space-y-5 md:space-y-6">
-            <div className="bg-white/10 backdrop-blur-sm p-5 md:p-6 rounded-lg shadow-sm border border-white/20">
+          <div className="space-y-5 md:space-y-6 flex flex-col">
+            <div className="bg-white/10 backdrop-blur-sm p-5 md:p-6 rounded-lg shadow-sm border border-white/20 w-full">
               <h3 className="font-medium text-epic-gold text-xl mb-3 md:mb-4">Pontos de Interesse</h3>
               <ul className="mt-2 space-y-2 md:space-y-3">
                 <li className="flex items-center gap-3">
@@ -52,7 +52,12 @@ const LocationSection = () => {
               </ul>
             </div>
             
-            <WhatsAppButton className="w-full" variant="outline" buttonText="Ver Mais no WhatsApp" />
+            <WhatsAppButton 
+              className="w-full" 
+              variant="outline" 
+              buttonText="Ver Mais no WhatsApp"
+              centered={false} 
+            />
           </div>
         </div>
       </div>
