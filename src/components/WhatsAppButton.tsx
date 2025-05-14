@@ -31,15 +31,16 @@ const WhatsAppButton = ({
       size={size}
       onClick={handleWhatsAppClick}
       className={cn(
-        "font-semibold flex items-center gap-2 py-6 px-5 text-base transition-all duration-300 shadow-md hover:shadow-lg btn-hover-effect",
+        "font-semibold flex items-center gap-2 py-4 md:py-6 px-3 md:px-5 text-sm md:text-base transition-all duration-300 shadow-md hover:shadow-lg btn-hover-effect",
+        // Semi-transparent background for better readability
         inverted 
-          ? "bg-white text-epic-blue hover:bg-epic-gold hover:text-white" 
-          : "bg-epic-gold text-white hover:bg-white hover:text-epic-blue",
+          ? "bg-white/95 text-epic-blue hover:bg-epic-gold hover:text-white" 
+          : "bg-epic-gold/95 text-white hover:bg-white hover:text-epic-blue",
         className
       )}
     >
-      Quero saber mais sobre o Epic Golf Residence
-      <ArrowRight className="h-5 w-5" />
+      <span className="line-clamp-1">Quero saber mais sobre o Epic Golf Residence</span>
+      <ArrowRight className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
     </Button>
   );
 };

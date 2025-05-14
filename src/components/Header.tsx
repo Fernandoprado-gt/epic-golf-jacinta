@@ -46,12 +46,12 @@ const Header = ({
 
   return (
     <header className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-4 px-6",
-      scrolled ? "bg-epic-blue shadow-md py-3" : "bg-transparent", 
+      "fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-2 md:py-4 px-3 md:px-6",
+      scrolled ? "bg-epic-blue/95 shadow-md" : "bg-transparent", 
       className
     )}>
       <div className="container max-w-7xl mx-auto flex justify-between items-center">
-        <div className="text-2xl font-bold text-white">
+        <div className="text-xl md:text-2xl font-bold text-white">
           Epic Golf
         </div>
         
@@ -62,7 +62,7 @@ const Header = ({
                 <NavigationMenuLink 
                   onClick={() => handleNavClick('hero')}
                   className={cn(
-                    "px-3 py-2 text-sm font-medium cursor-pointer flex items-center gap-1.5 hover:text-epic-gold transition-colors",
+                    "px-2 md:px-3 py-2 text-xs md:text-sm font-medium cursor-pointer flex items-center gap-1 md:gap-1.5 hover:text-epic-gold transition-colors",
                     scrolled ? "text-white" : "text-white"
                   )}
                 >
@@ -74,7 +74,7 @@ const Header = ({
                 <NavigationMenuLink 
                   onClick={() => handleNavClick('benefits')}
                   className={cn(
-                    "px-3 py-2 text-sm font-medium cursor-pointer flex items-center gap-1.5 hover:text-epic-gold transition-colors",
+                    "px-2 md:px-3 py-2 text-xs md:text-sm font-medium cursor-pointer flex items-center gap-1 md:gap-1.5 hover:text-epic-gold transition-colors",
                     scrolled ? "text-white" : "text-white"
                   )}
                 >
@@ -86,7 +86,7 @@ const Header = ({
                 <NavigationMenuLink 
                   onClick={() => handleNavClick('gallery')}
                   className={cn(
-                    "px-3 py-2 text-sm font-medium cursor-pointer flex items-center gap-1.5 hover:text-epic-gold transition-colors",
+                    "px-2 md:px-3 py-2 text-xs md:text-sm font-medium cursor-pointer flex items-center gap-1 md:gap-1.5 hover:text-epic-gold transition-colors",
                     scrolled ? "text-white" : "text-white"
                   )}
                 >
@@ -98,7 +98,7 @@ const Header = ({
                 <NavigationMenuLink 
                   onClick={() => handleNavClick('location')}
                   className={cn(
-                    "px-3 py-2 text-sm font-medium cursor-pointer flex items-center gap-1.5 hover:text-epic-gold transition-colors",
+                    "px-2 md:px-3 py-2 text-xs md:text-sm font-medium cursor-pointer flex items-center gap-1 md:gap-1.5 hover:text-epic-gold transition-colors",
                     scrolled ? "text-white" : "text-white"
                   )}
                 >
@@ -110,7 +110,7 @@ const Header = ({
                 <NavigationMenuLink 
                   onClick={() => handleNavClick('faq')}
                   className={cn(
-                    "px-3 py-2 text-sm font-medium cursor-pointer flex items-center gap-1.5 hover:text-epic-gold transition-colors",
+                    "px-2 md:px-3 py-2 text-xs md:text-sm font-medium cursor-pointer flex items-center gap-1 md:gap-1.5 hover:text-epic-gold transition-colors",
                     scrolled ? "text-white" : "text-white"
                   )}
                 >
@@ -125,7 +125,7 @@ const Header = ({
         <div className="hidden md:block">
           <WhatsAppButton 
             size="sm" 
-            className="py-2 px-4 text-sm"
+            className="py-1.5 md:py-2 px-3 md:px-4 text-xs md:text-sm max-w-[12rem] md:max-w-none"
             variant={scrolled ? "default" : "default"}
             inverted={!scrolled}
           />
@@ -141,14 +141,14 @@ const Header = ({
             )}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            <Menu className="w-6 h-6" />
+            <Menu className="w-5 h-5" />
           </Button>
         </div>
       </div>
       
       {/* Mobile Navigation Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-epic-blue shadow-md py-4 px-6 animate-fade-in">
+        <div className="md:hidden absolute top-full left-0 right-0 bg-epic-blue/95 shadow-md py-4 px-4 animate-fade-in">
           <nav className="flex flex-col space-y-3">
             <a 
               onClick={() => handleNavClick('hero')} 
@@ -180,7 +180,7 @@ const Header = ({
             >
               <HelpCircle size={18} /> Perguntas
             </a>
-            <WhatsAppButton className="w-full mt-2" />
+            <WhatsAppButton className="w-full mt-2 py-2 px-3 text-sm" />
           </nav>
         </div>
       )}
