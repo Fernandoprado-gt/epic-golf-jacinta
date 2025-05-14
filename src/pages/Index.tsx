@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import LeadForm from "@/components/LeadForm";
@@ -69,10 +70,12 @@ const faqItems = [{
   question: "Qual é o status do registro do empreendimento?",
   answer: "O empreendimento está devidamente registrado e com todas as licenças necessárias aprovadas."
 }];
+
 const Index = () => {
   useEffect(() => {
     document.title = "Epic Golf Residence – Apartamentos e Coberturas no Golfe Olímpico da Barra";
   }, []);
+  
   return <div className="min-h-screen flex flex-col bg-white">
       <Toaster position="top-center" />
       <Header />
@@ -82,15 +85,18 @@ const Index = () => {
         <div className="absolute inset-0 bg-cover bg-center" style={{
         backgroundImage: "url('https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')"
       }}>
-          <div className="absolute inset-0 hero-gradient"></div>
+          <div className="absolute inset-0 bg-epic-blue/80"></div>
         </div>
         
         <div className="container max-w-7xl mx-auto px-6 h-full flex flex-col justify-center relative z-10">
           <div className="flex flex-col md:flex-row items-center md:items-start gap-8 md:gap-16">
             <div className="w-full md:w-7/12 text-center md:text-left animate-fade-in">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4">
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4">
                 Viva além do extraordinário no Epic Golf Residence
               </h1>
+              <p className="text-epic-gold text-lg md:text-xl mb-4">
+                Cada detalhe pensado para surpreender você todos os dias
+              </p>
               <h2 className="text-xl md:text-2xl text-epic-gold font-medium mb-6">
                 Apartamentos, Gardens e Coberturas de até 208m² no ponto mais nobre da Barra: o Golfe Olímpico
               </h2>
@@ -116,16 +122,16 @@ const Index = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-epic-gray">
+      <section className="py-24 bg-epic-gray">
         <div className="container max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-epic-blue mb-4">Benefícios Exclusivos</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-epic-blue mb-4">Benefícios Exclusivos</h2>
+            <p className="text-epic-black text-lg max-w-3xl mx-auto">
               Descubra os diferenciais que fazem do Epic Golf Residence a escolha ideal para quem busca exclusividade e bem-estar.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <BenefitCard icon={MapPin} title="Localização Privilegiada" description="Ao lado do Campo de Golfe Olímpico, no ponto mais nobre da Barra da Tijuca." />
             <BenefitCard icon={Building} title="Infraestrutura Completa" description="Lazer completo em mais de 12.788 m² de terreno." />
             <BenefitCard icon={Users} title="Serviços Exclusivos" description="Concierge, Grab & Go, Car Wash, Private Ride e muito mais." />
@@ -134,36 +140,36 @@ const Index = () => {
             <BenefitCard icon={Waves} title="Gardens e Coberturas com Piscina" description="Unidades Garden e Coberturas com piscinas privativas." />
           </div>
           
-          <div className="mt-12 text-center">
+          <div className="mt-16 text-center">
             <WhatsAppButton />
           </div>
         </div>
       </section>
       
       {/* Gallery Section */}
-      <section className="py-20">
+      <section className="py-24 bg-white">
         <div className="container max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-epic-blue mb-4">Galeria de Imagens</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-epic-blue mb-4">Galeria de Imagens</h2>
+            <p className="text-epic-black text-lg max-w-3xl mx-auto">
               Explore as imagens do Epic Golf Residence e suas áreas de lazer exclusivas.
             </p>
           </div>
           
           <ImageGallery images={galleryImages} />
           
-          <div className="mt-12 text-center">
+          <div className="mt-16 text-center">
             <WhatsAppButton />
           </div>
         </div>
       </section>
       
       {/* Location Section */}
-      <section className="py-20 bg-epic-gray">
+      <section className="py-24 bg-epic-blue text-white">
         <div className="container max-w-7xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-epic-blue mb-4">Localização Privilegiada</h2>
-            <p className="text-gray-600 max-w-3xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Localização Privilegiada</h2>
+            <p className="text-white/90 text-lg max-w-3xl mx-auto">
               Localizado na Av. Ermanno Dallari, 200 – Barra da Tijuca, ao lado do Campo de Golfe Olímpico, 
               próximo ao Rio Design Barra, Vogue Square e Praia da Barra.
             </p>
@@ -174,67 +180,75 @@ const Index = () => {
               <LocationMap />
             </div>
             
-            <div className="space-y-4">
-              <div className="bg-white p-4 rounded-lg shadow-sm">
-                <h3 className="font-medium text-epic-blue">Pontos de Interesse</h3>
-                <ul className="mt-2 space-y-2">
-                  <li className="flex items-center gap-2">
-                    <span className="h-2 w-2 rounded-full bg-epic-green"></span>
-                    <span>Campo de Golfe Olímpico</span>
+            <div className="space-y-6">
+              <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg shadow-sm border border-white/20">
+                <h3 className="font-medium text-epic-gold text-xl mb-4">Pontos de Interesse</h3>
+                <ul className="mt-2 space-y-3">
+                  <li className="flex items-center gap-3">
+                    <span className="h-3 w-3 rounded-full bg-epic-green"></span>
+                    <span className="text-white/90">Campo de Golfe Olímpico</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="h-2 w-2 rounded-full bg-epic-green"></span>
-                    <span>Lagoa de Marapendi</span>
+                  <li className="flex items-center gap-3">
+                    <span className="h-3 w-3 rounded-full bg-epic-green"></span>
+                    <span className="text-white/90">Lagoa de Marapendi</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="h-2 w-2 rounded-full bg-epic-green"></span>
-                    <span>Praia da Barra</span>
+                  <li className="flex items-center gap-3">
+                    <span className="h-3 w-3 rounded-full bg-epic-green"></span>
+                    <span className="text-white/90">Praia da Barra</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="h-2 w-2 rounded-full bg-epic-green"></span>
-                    <span>Supermercado Zona Sul</span>
+                  <li className="flex items-center gap-3">
+                    <span className="h-3 w-3 rounded-full bg-epic-green"></span>
+                    <span className="text-white/90">Supermercado Zona Sul</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="h-2 w-2 rounded-full bg-epic-green"></span>
-                    <span>Academia DNA</span>
+                  <li className="flex items-center gap-3">
+                    <span className="h-3 w-3 rounded-full bg-epic-green"></span>
+                    <span className="text-white/90">Academia DNA</span>
                   </li>
-                  <li className="flex items-center gap-2">
-                    <span className="h-2 w-2 rounded-full bg-epic-green"></span>
-                    <span>Shoppings e escolas próximas</span>
+                  <li className="flex items-center gap-3">
+                    <span className="h-3 w-3 rounded-full bg-epic-green"></span>
+                    <span className="text-white/90">Shoppings e escolas próximas</span>
                   </li>
                 </ul>
               </div>
               
-              <WhatsAppButton className="w-full" />
+              <WhatsAppButton className="w-full" variant="outline" />
             </div>
           </div>
         </div>
       </section>
       
       {/* FAQ Section */}
-      <section className="py-20">
+      <section className="py-24 bg-epic-gray">
         <div className="container max-w-3xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-epic-blue mb-4">Perguntas Frequentes</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-bold text-epic-blue mb-4">Perguntas Frequentes</h2>
+            <p className="text-epic-black text-lg max-w-2xl mx-auto">
               Encontre respostas para as dúvidas mais comuns sobre o Epic Golf Residence.
             </p>
           </div>
           
           <FaqSection faqs={faqItems} />
           
-          <div className="mt-12 text-center">
-            <p className="text-gray-600 mb-4">Não encontrou o que procurava?</p>
+          <div className="mt-16 text-center">
+            <p className="text-epic-black text-lg mb-5">Não encontrou o que procurava?</p>
             <WhatsAppButton />
           </div>
         </div>
       </section>
       
       {/* CTA Section */}
-      
+      <section className="py-20 bg-epic-blue text-white">
+        <div className="container max-w-5xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Viva além do extraordinário</h2>
+          <p className="text-white/90 text-lg mb-8 max-w-xl mx-auto">
+            Descubra o que torna o Epic Golf Residence único e como este empreendimento pode elevar seu estilo de vida.
+          </p>
+          <WhatsAppButton className="mx-auto text-center justify-center" />
+        </div>
+      </section>
       
       {/* Footer */}
-      <footer className="py-8 bg-epic-blue text-white/70">
+      <footer className="py-12 bg-epic-blue text-white/70">
         <div className="container max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">

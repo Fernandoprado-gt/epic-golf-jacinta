@@ -85,13 +85,13 @@ const LeadForm = ({ className, onDark = false }: LeadFormProps) => {
       <form
         onSubmit={form.handleSubmit(onSubmit)}
         className={cn(
-          "space-y-4 rounded-lg p-5 md:p-6",
-          onDark ? "bg-white/10 backdrop-blur-sm" : "bg-white shadow-lg",
+          "space-y-5 rounded-lg p-6 md:p-7 shadow-lg transition-all",
+          onDark ? "bg-epic-blue/90 backdrop-blur-sm border border-white/10" : "bg-white",
           className
         )}
       >
         <h3 className={cn(
-          "text-xl font-bold mb-4",
+          "text-2xl font-bold mb-5",
           onDark ? "text-white" : "text-epic-blue"
         )}>
           Receba mais informações
@@ -102,14 +102,20 @@ const LeadForm = ({ className, onDark = false }: LeadFormProps) => {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className={onDark ? "text-white" : ""}>
+              <FormLabel className={cn(
+                "text-base font-medium",
+                onDark ? "text-white" : "text-epic-black"
+              )}>
                 Nome
               </FormLabel>
               <FormControl>
                 <Input 
                   placeholder="Seu nome completo" 
                   {...field} 
-                  className={onDark ? "bg-white/20 text-white placeholder:text-white/70 border-white/30" : ""}
+                  className={cn(
+                    "py-6 text-base transition-all focus:ring-epic-gold",
+                    onDark ? "bg-white/20 text-white placeholder:text-white/70 border-white/30" : "border-epic-blue/20"
+                  )}
                 />
               </FormControl>
               <FormMessage />
@@ -122,14 +128,20 @@ const LeadForm = ({ className, onDark = false }: LeadFormProps) => {
           name="whatsapp"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className={onDark ? "text-white" : ""}>
+              <FormLabel className={cn(
+                "text-base font-medium",
+                onDark ? "text-white" : "text-epic-black"
+              )}>
                 WhatsApp
               </FormLabel>
               <FormControl>
                 <Input 
                   placeholder="(21) 98888-8888" 
                   {...field} 
-                  className={onDark ? "bg-white/20 text-white placeholder:text-white/70 border-white/30" : ""}
+                  className={cn(
+                    "py-6 text-base transition-all focus:ring-epic-gold",
+                    onDark ? "bg-white/20 text-white placeholder:text-white/70 border-white/30" : "border-epic-blue/20"
+                  )}
                 />
               </FormControl>
               <FormMessage />
@@ -142,12 +154,18 @@ const LeadForm = ({ className, onDark = false }: LeadFormProps) => {
           name="interest"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className={onDark ? "text-white" : ""}>
+              <FormLabel className={cn(
+                "text-base font-medium",
+                onDark ? "text-white" : "text-epic-black"
+              )}>
                 Interesse
               </FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
-                  <SelectTrigger className={onDark ? "bg-white/20 text-white border-white/30" : ""}>
+                  <SelectTrigger className={cn(
+                    "py-6 text-base transition-all",
+                    onDark ? "bg-white/20 text-white border-white/30" : "border-epic-blue/20"
+                  )}>
                     <SelectValue placeholder="Selecione seu interesse" />
                   </SelectTrigger>
                 </FormControl>
@@ -166,10 +184,13 @@ const LeadForm = ({ className, onDark = false }: LeadFormProps) => {
         <Button 
           type="submit" 
           disabled={isSubmitting}
-          className="w-full bg-epic-gold hover:bg-epic-gold/90 text-white font-medium flex items-center justify-center gap-2"
+          className={cn(
+            "w-full bg-epic-gold hover:bg-epic-blue text-white font-semibold py-6 text-base transition-all duration-300 mt-2 shadow-md hover:shadow-lg btn-hover-effect",
+            onDark ? "hover:bg-white hover:text-epic-blue" : ""
+          )}
         >
           {isSubmitting ? "Enviando..." : "Enviar"}
-          {!isSubmitting && <ArrowRight className="h-4 w-4" />}
+          {!isSubmitting && <ArrowRight className="h-5 w-5" />}
         </Button>
       </form>
     </Form>

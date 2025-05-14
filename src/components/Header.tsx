@@ -28,8 +28,8 @@ const Header = ({ className }: HeaderProps) => {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6",
-        scrolled ? "bg-white shadow-md py-2" : "bg-transparent",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-4 px-6",
+        scrolled ? "bg-white shadow-md py-3" : "bg-transparent",
         className
       )}
     >
@@ -38,19 +38,31 @@ const Header = ({ className }: HeaderProps) => {
           <img 
             src="/placeholder.svg" 
             alt="Epic Golf Residence" 
-            className="h-12"
+            className="h-14"
           />
         </div>
         
         <div className="hidden md:block">
-          <WhatsAppButton variant="outline" size="sm" />
+          <WhatsAppButton 
+            variant="outline" 
+            size="sm" 
+            className={scrolled 
+              ? "border-epic-gold text-epic-blue hover:text-white" 
+              : "border-white text-white"
+            } 
+          />
         </div>
         
         <div className="md:hidden">
           <Button
             variant="outline"
             size="icon"
-            className={scrolled ? "border-epic-blue text-epic-blue" : "border-white text-white"}
+            className={cn(
+              "transition-all duration-300",
+              scrolled 
+                ? "border-epic-gold text-epic-blue" 
+                : "border-white text-white"
+            )}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

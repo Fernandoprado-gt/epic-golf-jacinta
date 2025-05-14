@@ -29,12 +29,12 @@ const WhatsAppButton = ({
       size={size}
       onClick={handleWhatsAppClick}
       className={cn(
-        "bg-epic-green hover:bg-epic-green/90 text-white font-medium flex items-center gap-2",
+        "bg-epic-gold hover:bg-epic-blue text-white font-semibold flex items-center gap-2 py-6 px-5 text-base transition-all duration-300 shadow-md hover:shadow-lg btn-hover-effect",
         className
       )}
     >
       Quero saber mais sobre o Epic Golf Residence
-      <ArrowRight className="h-4 w-4" />
+      <ArrowRight className="h-5 w-5" />
     </Button>
   );
 };

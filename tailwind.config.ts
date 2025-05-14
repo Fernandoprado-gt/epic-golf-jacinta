@@ -53,13 +53,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				// Custom Epic Golf colors
+				// New Epic Golf colors based on the requested palette
 				epic: {
 					white: '#FFFFFF',
-					gray: '#F5F5F5',
+					gray: '#F5F5F0',
 					gold: '#C2A77D',
-					green: '#617B4D',
+					green: '#6F9770',
 					blue: '#0A1B2A',
+					black: '#1A1A1A',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
