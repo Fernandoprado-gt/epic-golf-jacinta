@@ -85,13 +85,13 @@ const LeadForm = ({ className, onDark = false }: LeadFormProps) => {
       <form
         onSubmit={form.handleSubmit(onSubmit)}
         className={cn(
-          "space-y-5 rounded-lg p-6 md:p-7 shadow-lg transition-all",
+          "space-y-4 rounded-lg p-5 md:p-6 shadow-lg transition-all",
           onDark ? "bg-epic-blue/90 backdrop-blur-sm border border-white/10" : "bg-white",
           className
         )}
       >
         <h3 className={cn(
-          "text-2xl font-bold mb-5",
+          "text-xl md:text-2xl font-bold mb-4",
           onDark ? "text-white" : "text-epic-blue"
         )}>
           Receba mais informações
@@ -113,7 +113,7 @@ const LeadForm = ({ className, onDark = false }: LeadFormProps) => {
                   placeholder="Seu nome completo" 
                   {...field} 
                   className={cn(
-                    "py-6 text-base transition-all focus:ring-epic-gold",
+                    "py-5 md:py-6 text-base transition-all focus:ring-epic-gold",
                     onDark ? "bg-white/20 text-white placeholder:text-white/70 border-white/30" : "border-epic-blue/20"
                   )}
                 />
@@ -139,7 +139,7 @@ const LeadForm = ({ className, onDark = false }: LeadFormProps) => {
                   placeholder="(21) 98888-8888" 
                   {...field} 
                   className={cn(
-                    "py-6 text-base transition-all focus:ring-epic-gold",
+                    "py-5 md:py-6 text-base transition-all focus:ring-epic-gold",
                     onDark ? "bg-white/20 text-white placeholder:text-white/70 border-white/30" : "border-epic-blue/20"
                   )}
                 />
@@ -163,7 +163,7 @@ const LeadForm = ({ className, onDark = false }: LeadFormProps) => {
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger className={cn(
-                    "py-6 text-base transition-all",
+                    "py-5 md:py-6 text-base transition-all",
                     onDark ? "bg-white/20 text-white border-white/30" : "border-epic-blue/20"
                   )}>
                     <SelectValue placeholder="Selecione seu interesse" />
@@ -185,7 +185,7 @@ const LeadForm = ({ className, onDark = false }: LeadFormProps) => {
           type="submit" 
           disabled={isSubmitting}
           className={cn(
-            "w-full bg-epic-gold hover:bg-epic-blue text-white font-semibold py-6 text-base transition-all duration-300 mt-2 shadow-md hover:shadow-lg btn-hover-effect",
+            "w-full bg-epic-gold hover:bg-epic-blue text-white font-semibold py-5 md:py-6 text-base transition-all duration-300 mt-2 shadow-md hover:shadow-lg btn-hover-effect",
             onDark ? "hover:bg-white hover:text-epic-blue" : ""
           )}
         >
