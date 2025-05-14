@@ -20,7 +20,7 @@ const SubmitButton = ({ isSubmitting, onDark = false }: SubmitButtonProps) => {
       )}
     >
       {isSubmitting ? "Enviando..." : "Enviar"}
-      {!isSubmitting && <ArrowRight className="h-5 w-5" />}
+      {!isSubmitting && <ArrowRight className="h-5 w-5 ml-2" />}
     </Button>
   );
 };

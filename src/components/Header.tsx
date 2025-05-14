@@ -128,6 +128,7 @@ const Header = ({
             className="py-1.5 md:py-2 px-3 md:px-4 text-xs md:text-sm max-w-[12rem] md:max-w-none"
             variant={scrolled ? "default" : "default"}
             inverted={!scrolled}
+            buttonText="Falar no WhatsApp"
           />
         </div>
         
@@ -180,7 +181,7 @@ const Header = ({
             >
               <HelpCircle size={18} /> Perguntas
             </a>
-            <WhatsAppButton className="w-full mt-2 py-2 px-3 text-sm" />
+            <WhatsAppButton className="w-full mt-2 py-2 px-3 text-sm" buttonText="Falar no WhatsApp" />
           </nav>
         </div>
       )}

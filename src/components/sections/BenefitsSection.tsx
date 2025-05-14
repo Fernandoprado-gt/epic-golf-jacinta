@@ -26,7 +26,7 @@ const BenefitsSection = () => {
         </div>
         
         <div className="mt-12 md:mt-16 text-center">
-          <WhatsAppButton />
+          <WhatsAppButton buttonText="Quero Falar no WhatsApp" />
         </div>
       </div>
     </section>

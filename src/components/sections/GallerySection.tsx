@@ -27,7 +27,7 @@ const GallerySection = ({ images }: GallerySectionProps) => {
         <ImageGallery images={images} />
         
         <div className="mt-12 md:mt-16 text-center">
-          <WhatsAppButton />
+          <WhatsAppButton buttonText="Quero Saber Mais" />
         </div>
       </div>
     </section>

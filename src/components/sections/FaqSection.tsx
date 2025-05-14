@@ -26,7 +26,7 @@ const FaqSectionComponent = ({ faqs }: FaqSectionComponentProps) => {
         
         <div className="mt-12 md:mt-16 text-center">
           <p className="text-epic-black text-lg mb-4 md:mb-5">Não encontrou o que procurava?</p>
-          <WhatsAppButton />
+          <WhatsAppButton buttonText="Preciso de Mais Infos" />
         </div>
       </div>
     </section>

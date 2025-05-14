@@ -52,7 +52,7 @@ const LocationSection = () => {
               </ul>
             </div>
             
-            <WhatsAppButton className="w-full" variant="outline" />
+            <WhatsAppButton className="w-full" variant="outline" buttonText="Ver Mais no WhatsApp" />
           </div>
         </div>
       </div>

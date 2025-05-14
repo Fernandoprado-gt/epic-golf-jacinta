@@ -9,6 +9,7 @@ interface WhatsAppButtonProps {
   size?: "default" | "sm" | "lg" | "icon";
   customMessage?: string;
   inverted?: boolean;
+  buttonText?: string;
 }
 
 const WhatsAppButton = ({ 
@@ -16,7 +17,8 @@ const WhatsAppButton = ({
   variant = "default", 
   size = "default",
   customMessage,
-  inverted = false
+  inverted = false,
+  buttonText
 }: WhatsAppButtonProps) => {
   const handleWhatsAppClick = () => {
     const message = customMessage || "";
@@ -25,13 +27,16 @@ const WhatsAppButton = ({
     window.open(whatsAppUrl, "_blank");
   };
 
+  // Default text if no custom text is provided
+  const defaultText = "Falar no WhatsApp";
+
   return (
     <Button 
       variant={variant} 
       size={size}
       onClick={handleWhatsAppClick}
       className={cn(
-        "font-semibold flex items-center gap-2 py-3 md:py-4 lg:py-6 px-3 md:px-5 text-sm md:text-base transition-all duration-300 shadow-md hover:shadow-lg btn-hover-effect",
+        "font-semibold flex items-center gap-2 py-3 md:py-4 lg:py-6 px-3 md:px-5 text-sm md:text-base transition-all duration-300 shadow-md hover:shadow-lg btn-hover-effect w-full md:w-auto",
         // Semi-transparent background for better readability
         inverted 
           ? "bg-white/95 text-epic-blue hover:bg-epic-gold hover:text-white" 
@@ -39,7 +44,7 @@ const WhatsAppButton = ({
         className
       )}
     >
-      <span className="line-clamp-1">Quero saber mais sobre o Epic Golf Residence</span>
+      <span className="line-clamp-1">{buttonText || defaultText}</span>
       <ArrowRight className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
     </Button>
   );

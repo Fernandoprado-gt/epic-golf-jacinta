@@ -11,7 +11,10 @@ const CtaSection = () => {
         <p className="text-white/90 text-base sm:text-lg mb-6 md:mb-8 max-w-xl mx-auto px-1">
           Descubra o que torna o Epic Golf Residence único e como este empreendimento pode elevar seu estilo de vida.
         </p>
-        <WhatsAppButton className="mx-auto text-center justify-center" />
+        <WhatsAppButton 
+          className="mx-auto text-center justify-center" 
+          buttonText="Falar com um Especialista" 
+        />
       </div>
     </section>
   );

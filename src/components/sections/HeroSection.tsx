@@ -25,7 +25,7 @@ const HeroSection = () => {
               Apartamentos, Gardens e Coberturas de até 208m² no ponto mais nobre da Barra: o Golfe Olímpico
             </h2>
             <div className="hidden md:block mt-8">
-              <WhatsAppButton className="mt-4" />
+              <WhatsAppButton className="mt-4" buttonText="Falar no WhatsApp" />
             </div>
           </div>
           
