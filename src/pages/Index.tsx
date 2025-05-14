@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import Header from "@/components/Header";
 import LeadForm from "@/components/LeadForm";
@@ -71,30 +70,6 @@ const galleryImages = [
     alt: "Área gourmet ao ar livre",
     caption: "Área gourmet com vista para a piscina",
     category: "Lazer"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    alt: "Perspectiva artística da fachada",
-    caption: "Perspectiva artística da fachada",
-    category: "Fachada"
-  }, 
-  {
-    src: "https://images.unsplash.com/photo-1600573472591-559339dab952?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    alt: "Planta do Garden",
-    caption: "Planta do Garden de até 182m² com piscina privativa",
-    category: "Plantas"
-  }, 
-  {
-    src: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    alt: "Planta da Cobertura",
-    caption: "Planta da Cobertura de até 208m²",
-    category: "Plantas"
-  },
-  {
-    src: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    alt: "Planta do Apartamento",
-    caption: "Planta do Apartamento Padrão",
-    category: "Plantas"
   }
 ];
 
