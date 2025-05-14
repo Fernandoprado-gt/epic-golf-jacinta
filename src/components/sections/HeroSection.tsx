@@ -1,6 +1,6 @@
 
 import WhatsAppButton from "@/components/WhatsAppButton";
-import LeadForm from "@/components/LeadForm";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const HeroSection = () => {
   return (
@@ -35,8 +35,14 @@ const HeroSection = () => {
             </div>
           </div>
           
-          <div className="w-full md:w-5/12 md:max-w-md bg-epic-blue/40 p-5 sm:p-6 rounded-lg backdrop-blur-sm">
-            <LeadForm onDark={true} />
+          <div className="w-full md:w-5/12 md:max-w-md rounded-lg overflow-hidden">
+            <AspectRatio ratio={3/4} className="h-full">
+              <img 
+                src="/lovable-uploads/72148c10-3aa2-4bde-bcd6-6578b5b3d194.png" 
+                alt="Epic Golf Residence" 
+                className="w-full h-full object-cover rounded-lg"
+              />
+            </AspectRatio>
           </div>
         </div>
       </div>
