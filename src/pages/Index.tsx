@@ -160,12 +160,13 @@ const Index = () => {
       <Toaster position="top-center" />
       <Header />
 
-      {/* Hero Section */}
+      {/* Hero Section with new background image */}
       <section id="hero" className="h-screen relative overflow-hidden">
-        <div className="absolute inset-0 bg-cover bg-center" style={{
-        backgroundImage: "url('https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80')"
-      }}>
-          <div className="absolute inset-0 bg-epic-blue/80"></div>
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat bg-fixed" style={{
+          backgroundImage: "url('/lovable-uploads/42b4fad2-b4dd-4564-b5b2-38801ae5153d.png')"
+        }}>
+          {/* Dark overlay gradient for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-epic-blue/60 to-epic-blue/70"></div>
         </div>
         
         <div className="container max-w-7xl mx-auto px-6 h-full flex flex-col justify-center relative z-10">
@@ -185,7 +186,7 @@ const Index = () => {
               </div>
             </div>
             
-            <div className="w-full md:w-5/12 md:max-w-md">
+            <div className="w-full md:w-5/12 md:max-w-md bg-epic-blue/40 p-6 rounded-lg backdrop-blur-sm">
               <LeadForm onDark={true} />
             </div>
           </div>
