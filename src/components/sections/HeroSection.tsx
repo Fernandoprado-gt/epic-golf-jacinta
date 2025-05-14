@@ -24,20 +24,20 @@ const HeroSection = () => {
             <h2 className="text-lg sm:text-xl md:text-2xl text-epic-gold font-medium mb-6 break-normal">
               Apartamentos, Gardens e Coberturas de até 208m² no ponto mais nobre da Barra: o Golfe Olímpico
             </h2>
+            
+            {/* Desktop WhatsApp button positioned below text, left-aligned */}
+            <div className="hidden md:block mt-6">
+              <WhatsAppButton 
+                buttonText="Falar no WhatsApp"
+                centered={false}
+                className="shadow-lg"
+              />
+            </div>
           </div>
           
           <div className="w-full md:w-5/12 md:max-w-md bg-epic-blue/40 p-5 sm:p-6 rounded-lg backdrop-blur-sm">
             <LeadForm onDark={true} />
           </div>
-        </div>
-        
-        {/* WhatsApp button positioned at the bottom right */}
-        <div className="hidden md:block absolute bottom-0 right-0 pb-6 pr-6">
-          <WhatsAppButton 
-            buttonText="Falar no WhatsApp"
-            centered={false}
-            className="shadow-lg" 
-          />
         </div>
       </div>
       
