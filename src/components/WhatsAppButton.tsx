@@ -22,19 +22,11 @@ const WhatsAppButton = ({
   buttonText,
   centered = true
 }: WhatsAppButtonProps) => {
-  const handleWhatsAppClick = (e: React.MouseEvent) => {
-    e.preventDefault();
+  const handleWhatsAppClick = () => {
     const message = customMessage || "";
     const encodedMessage = encodeURIComponent(message);
     const whatsAppUrl = `https://wa.me/5521988384869?text=${encodedMessage}`;
-    
-    // Use the Google Ads conversion tracking function
-    // @ts-ignore - gtag_report_conversion_whatsapp is defined in index.html
-    if (typeof window !== 'undefined' && window.gtag_report_conversion_whatsapp) {
-      window.gtag_report_conversion_whatsapp(whatsAppUrl);
-    } else {
-      window.open(whatsAppUrl, "_blank");
-    }
+    window.open(whatsAppUrl, "_blank");
   };
 
   // Default text if no custom text is provided
