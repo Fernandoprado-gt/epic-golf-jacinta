@@ -35,10 +35,11 @@ const WhatsAppButton = ({
       ? `https://wa.me/${phoneNumber}?text=${encodedMessage}`
       : `https://wa.me/${phoneNumber}`;
     
-    // Use the gtag_report_conversion function for conversion tracking
-    // The function is defined in index.html
-    if (typeof window !== 'undefined' && window.gtag_report_conversion) {
-      window.gtag_report_conversion(whatsAppUrl);
+    // Use the gtag_report_conversion function which handles both:
+    // 1. Triggering the conversion tag
+    // 2. Redirecting the user
+    if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
+      return window.gtag_report_conversion(whatsAppUrl);
     } else {
       // Fallback in case the function is not available
       window.location.href = whatsAppUrl;
