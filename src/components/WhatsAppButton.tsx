@@ -40,7 +40,7 @@ const WhatsAppButton = ({
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "font-semibold flex items-center justify-center gap-2 py-3 md:py-4 lg:py-5 px-4 md:px-6 text-sm md:text-base transition-all duration-300 shadow-md hover:shadow-lg rounded-md",
+        "font-semibold flex items-center justify-center gap-2 py-2 md:py-3 px-4 md:px-5 text-sm transition-all duration-300 shadow-sm hover:shadow-md rounded-md",
         // Semi-transparent background for better readability
         inverted 
           ? "bg-white text-epic-blue hover:bg-epic-gold hover:text-white border border-epic-gold" 
@@ -50,9 +50,9 @@ const WhatsAppButton = ({
         className
       )}
     >
-      <MessageSquare className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
+      <MessageSquare className="h-4 w-4 flex-shrink-0" />
       <span className="line-clamp-1">{buttonText || defaultText}</span>
-      <ArrowRight className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
+      <ArrowRight className="h-4 w-4 flex-shrink-0" />
     </a>
   );
 };
