@@ -25,8 +25,8 @@ const WhatsAppButton = ({
   const handleWhatsAppClick = (e: React.MouseEvent) => {
     e.preventDefault();
     
-    // Use the corrected phone number as requested
-    const phoneNumber = "5521999121958"; 
+    // Updated to the new phone number
+    const phoneNumber = "5521999195838"; 
     const message = customMessage || "";
     const encodedMessage = encodeURIComponent(message);
     
