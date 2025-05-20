@@ -1,4 +1,6 @@
 
+import { Phone, MapPin, Instagram, Facebook } from "lucide-react";
+
 const Footer = () => {
   return (
     <footer className="py-8 bg-epic-blue text-white/70">
@@ -10,8 +12,42 @@ const Footer = () => {
             </p>
           </div>
           
-          <div className="text-sm">
-            <p>Av. Ermanno Dallari, 200 – Barra da Tijuca, Rio de Janeiro - RJ</p>
+          <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 text-sm">
+            <div className="flex items-center gap-2">
+              <MapPin className="h-4 w-4 text-epic-gold" />
+              <p>Av. Ermanno Dallari, 200 – Barra da Tijuca, Rio de Janeiro - RJ</p>
+            </div>
+            
+            <div className="flex items-center gap-2">
+              <Phone className="h-4 w-4 text-epic-gold" />
+              <a 
+                href="https://api.whatsapp.com/send?phone=5521999195838" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-epic-gold transition-colors"
+              >
+                +55 21 99919-5838
+              </a>
+            </div>
+            
+            <div className="flex items-center gap-3">
+              <a 
+                href="#" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-epic-gold transition-colors"
+              >
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a 
+                href="#" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-epic-gold transition-colors"
+              >
+                <Facebook className="h-4 w-4" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

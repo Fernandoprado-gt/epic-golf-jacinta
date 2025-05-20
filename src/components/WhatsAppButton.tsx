@@ -23,14 +23,14 @@ const WhatsAppButton = ({
 }: WhatsAppButtonProps) => {
   // The phone number to contact - ensure it's formatted correctly for WhatsApp
   // Format: Country code without + and remove any spaces, dashes, parentheses
-  const phoneNumber = "5521999195838"; // Updated as requested
+  const phoneNumber = "5521999195838"; // Updated phone number
   const message = customMessage || "";
   const encodedMessage = encodeURIComponent(message);
   
-  // Build the standard wa.me link format
+  // Build the WhatsApp link with the correct format
   const whatsAppUrl = message 
-    ? `https://wa.me/${phoneNumber}?text=${encodedMessage}`
-    : `https://wa.me/${phoneNumber}`;
+    ? `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`
+    : `https://api.whatsapp.com/send?phone=${phoneNumber}`;
 
   // Default text if no custom text is provided
   const defaultText = "Falar no WhatsApp";
