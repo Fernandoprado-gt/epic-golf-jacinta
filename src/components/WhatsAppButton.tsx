@@ -49,8 +49,15 @@ const WhatsAppButton = ({
       });
     }
     
-    // Use the updated Google Ads conversion tracking
-    return gtag_report_conversion(whatsAppUrl);
+    // Use the updated Google Ads conversion tracking with safety checks
+    if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
+      return window.gtag_report_conversion(whatsAppUrl);
+    } else {
+      // Fallback if the function is not available
+      console.warn('gtag_report_conversion function not found, performing direct redirect');
+      window.location.href = whatsAppUrl;
+      return false;
+    }
   };
 
   return (
