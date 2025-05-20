@@ -64,6 +64,20 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        
+        {/* Agência Tendência reference */}
+        <div className="mt-4 text-center text-xs text-white/50">
+          <p>
+            Desenvolvido por <a 
+              href="https://agenciatendencia.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-epic-gold transition-colors"
+            >
+              agenciatendencia.com
+            </a>
+          </p>
+        </div>
       </div>
     </footer>
   );
