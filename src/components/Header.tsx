@@ -46,7 +46,7 @@ const Header = ({
 
   return (
     <header className={cn(
-      "fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-2 md:py-4 px-3 md:px-6",
+      "fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-3 md:py-5 px-3 md:px-6",
       scrolled ? "bg-epic-blue/95 shadow-md" : "bg-transparent", 
       className
     )}>
@@ -57,12 +57,12 @@ const Header = ({
         
         <div className="hidden md:block">
           <NavigationMenu>
-            <NavigationMenuList className="gap-1">
+            <NavigationMenuList className="gap-4">
               <NavigationMenuItem>
                 <NavigationMenuLink 
                   onClick={() => handleNavClick('hero')}
                   className={cn(
-                    "px-2 md:px-3 py-2 text-xs md:text-sm font-medium cursor-pointer flex items-center gap-1 md:gap-1.5 hover:text-epic-gold transition-colors",
+                    "px-2 py-2 text-sm font-medium cursor-pointer flex items-center gap-1.5 hover:text-epic-gold transition-colors",
                     scrolled ? "text-white" : "text-white"
                   )}
                 >
@@ -74,7 +74,7 @@ const Header = ({
                 <NavigationMenuLink 
                   onClick={() => handleNavClick('benefits')}
                   className={cn(
-                    "px-2 md:px-3 py-2 text-xs md:text-sm font-medium cursor-pointer flex items-center gap-1 md:gap-1.5 hover:text-epic-gold transition-colors",
+                    "px-2 py-2 text-sm font-medium cursor-pointer flex items-center gap-1.5 hover:text-epic-gold transition-colors",
                     scrolled ? "text-white" : "text-white"
                   )}
                 >
@@ -86,7 +86,7 @@ const Header = ({
                 <NavigationMenuLink 
                   onClick={() => handleNavClick('gallery')}
                   className={cn(
-                    "px-2 md:px-3 py-2 text-xs md:text-sm font-medium cursor-pointer flex items-center gap-1 md:gap-1.5 hover:text-epic-gold transition-colors",
+                    "px-2 py-2 text-sm font-medium cursor-pointer flex items-center gap-1.5 hover:text-epic-gold transition-colors",
                     scrolled ? "text-white" : "text-white"
                   )}
                 >
@@ -98,7 +98,7 @@ const Header = ({
                 <NavigationMenuLink 
                   onClick={() => handleNavClick('location')}
                   className={cn(
-                    "px-2 md:px-3 py-2 text-xs md:text-sm font-medium cursor-pointer flex items-center gap-1 md:gap-1.5 hover:text-epic-gold transition-colors",
+                    "px-2 py-2 text-sm font-medium cursor-pointer flex items-center gap-1.5 hover:text-epic-gold transition-colors",
                     scrolled ? "text-white" : "text-white"
                   )}
                 >
@@ -110,7 +110,7 @@ const Header = ({
                 <NavigationMenuLink 
                   onClick={() => handleNavClick('faq')}
                   className={cn(
-                    "px-2 md:px-3 py-2 text-xs md:text-sm font-medium cursor-pointer flex items-center gap-1 md:gap-1.5 hover:text-epic-gold transition-colors",
+                    "px-2 py-2 text-sm font-medium cursor-pointer flex items-center gap-1.5 hover:text-epic-gold transition-colors",
                     scrolled ? "text-white" : "text-white"
                   )}
                 >
@@ -125,7 +125,7 @@ const Header = ({
         <div className="hidden md:block">
           <WhatsAppButton 
             size="sm" 
-            className="py-1.5 md:py-2 px-3 md:px-4 text-xs md:text-sm max-w-[12rem] md:max-w-none"
+            className="py-2 px-4 text-sm rounded-md"
             variant={scrolled ? "default" : "default"}
             inverted={!scrolled}
             buttonText="Falar no WhatsApp"

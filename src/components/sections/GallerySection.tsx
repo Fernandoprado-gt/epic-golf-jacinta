@@ -29,7 +29,7 @@ const GallerySection = ({ images }: GallerySectionProps) => {
         <div className="mt-12 md:mt-16 text-center">
           <WhatsAppButton 
             buttonText="Quero Saber Mais" 
-            className="md:min-w-[280px]"
+            className="md:min-w-[280px] bg-epic-gold text-white"
           />
         </div>
       </div>

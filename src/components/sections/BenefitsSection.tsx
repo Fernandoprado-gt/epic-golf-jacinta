@@ -5,7 +5,7 @@ import { MapPin, Building, Users, Dumbbell, Anchor, Waves } from "lucide-react";
 
 const BenefitsSection = () => {
   return (
-    <section id="benefits" className="py-16 md:py-24 bg-epic-gray">
+    <section id="benefits" className="py-20 md:py-28 bg-epic-gray">
       <div className="container max-w-7xl mx-auto px-5 sm:px-6">
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-epic-blue mb-4 break-normal">
@@ -25,10 +25,10 @@ const BenefitsSection = () => {
           <BenefitCard icon={Waves} title="Gardens e Coberturas com Piscina" description="Unidades Garden e Coberturas com piscinas privativas." />
         </div>
         
-        <div className="mt-12 md:mt-16 text-center">
+        <div className="mt-16 text-center">
           <WhatsAppButton 
             buttonText="Quero Falar no WhatsApp" 
-            className="md:min-w-[280px]"
+            className="md:min-w-[280px] bg-epic-gold text-white"
           />
         </div>
       </div>

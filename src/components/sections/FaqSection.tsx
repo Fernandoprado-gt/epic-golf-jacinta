@@ -28,7 +28,7 @@ const FaqSectionComponent = ({ faqs }: FaqSectionComponentProps) => {
           <p className="text-epic-black text-lg mb-4 md:mb-5">Não encontrou o que procurava?</p>
           <WhatsAppButton 
             buttonText="Preciso de Mais Infos"
-            className="md:min-w-[280px]" 
+            className="md:min-w-[280px] bg-epic-gold text-white" 
           />
         </div>
       </div>

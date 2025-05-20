@@ -23,7 +23,7 @@ const WhatsAppButton = ({
 }: WhatsAppButtonProps) => {
   // The phone number to contact - ensure it's formatted correctly for WhatsApp
   // Format: Country code without + and remove any spaces, dashes, parentheses
-  const phoneNumber = "5521988384869"; // Updated to the number in your specifications
+  const phoneNumber = "5521999195838"; // Updated as requested
   const message = customMessage || "";
   const encodedMessage = encodeURIComponent(message);
   

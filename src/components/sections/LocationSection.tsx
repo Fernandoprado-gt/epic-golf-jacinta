@@ -53,8 +53,7 @@ const LocationSection = () => {
             </div>
             
             <WhatsAppButton 
-              className="w-full" 
-              variant="outline" 
+              className="w-full bg-epic-gold text-white hover:bg-white hover:text-epic-blue" 
               buttonText="Ver Mais no WhatsApp"
               centered={false} 
             />

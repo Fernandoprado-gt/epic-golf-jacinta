@@ -14,24 +14,24 @@ const HeroSection = () => {
       
       <div className="container max-w-7xl mx-auto px-5 sm:px-6 relative z-10 w-full">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-16">
-          {/* Text content - Added md:pt-12 to move text down only on desktop */}
+          {/* Text content */}
           <div className="w-full md:w-7/12 text-center md:text-left md:pt-12 animate-fade-in">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-4 tracking-tight break-normal hyphens-none">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4 tracking-tight break-normal hyphens-none">
               Viva além do extraordinário no Epic Golf Residence
             </h1>
             <p className="text-epic-gold text-base sm:text-lg mb-4 px-1">
               Cada detalhe pensado para surpreender você todos os dias
             </p>
-            <h2 className="text-lg sm:text-xl md:text-2xl text-epic-gold font-medium mb-6 break-normal">
+            <h2 className="text-lg sm:text-xl md:text-2xl text-white font-medium mb-6 break-normal">
               Apartamentos, Gardens e Coberturas de até 208m² no ponto mais nobre da Barra: o Golfe Olímpico
             </h2>
             
-            {/* Desktop WhatsApp button positioned below text, left-aligned */}
-            <div className="hidden md:block mt-6">
+            {/* Desktop WhatsApp button positioned below text */}
+            <div className="mt-8">
               <WhatsAppButton 
                 buttonText="Falar no WhatsApp"
                 centered={false}
-                className="shadow-lg"
+                className="shadow-lg bg-epic-gold text-white hover:bg-white hover:text-epic-blue"
               />
             </div>
           </div>
