@@ -31,15 +31,19 @@
     <!-- Event snippet for Lead Whatsapp conversion page -->
     <script>
     function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof(url) != 'undefined') {
-          window.location = url;
-        }
-      };
-      gtag('event', 'conversion', {
-          'send_to': 'AW-17084581310/xjrHCLKGs8oaEL6LyNI_',
-          'event_callback': callback
-      });
+      try {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17084581310/xjrHCLKGs8oaEL6LyNI_'
+        });
+      } catch (e) {
+        console.warn('Falha ao enviar conversão:', e);
+      }
+
+      // Garante que o redirecionamento funcione, mesmo em modo debug
+      if (typeof(url) !== 'undefined' && url) {
+        window.location.href = url;
+      }
+
       return false;
     }
     </script>

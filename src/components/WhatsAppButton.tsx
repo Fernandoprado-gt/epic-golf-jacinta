@@ -51,13 +51,8 @@ const WhatsAppButton = ({
       });
     }
     
-    // Call Google Ads conversion tracking function
-    if (typeof window !== 'undefined' && window.gtag_report_conversion) {
-      return window.gtag_report_conversion(whatsAppUrl);
-    } else {
-      window.open(whatsAppUrl, '_blank', 'noopener,noreferrer');
-      return false;
-    }
+    // Use the updated gtag_report_conversion function
+    return window.gtag_report_conversion(whatsAppUrl);
   };
 
   return (
