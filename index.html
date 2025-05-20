@@ -19,33 +19,13 @@
     
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) - Updated for better Google Ads integration -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17084581310"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'AW-17084581310');
-    </script>
-    
-    <!-- Event snippet for Lead Whatsapp conversion page -->
-    <script>
-    function gtag_report_conversion(url) {
-      try {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-17084581310/xjrHCLKGs8oaEL6LyNI_'
-        });
-      } catch (e) {
-        console.warn('Falha ao enviar conversão:', e);
-      }
-
-      // Garante que o redirecionamento funcione, mesmo em modo debug
-      if (typeof(url) !== 'undefined' && url) {
-        window.location.href = url;
-      }
-
-      return false;
-    }
     </script>
     
     <!-- Google Tag Manager -->
@@ -94,6 +74,28 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PCTWT5PK"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+    
+    <!-- Updated Google Ads Conversion Tracking -->
+    <script>
+    function gtag_report_conversion(url) {
+      try {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17084581310/xjrHCLKGs8oaEL6LyNI_',
+          'event_callback': function() {
+            if (typeof(url) !== 'undefined') {
+              window.location.href = url;
+            }
+          }
+        });
+      } catch (e) {
+        console.warn('Erro ao reportar conversão:', e);
+        if (typeof(url) !== 'undefined') {
+          window.location.href = url;
+        }
+      }
+      return false;
+    }
+    </script>
     
     <div id="root"></div>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->

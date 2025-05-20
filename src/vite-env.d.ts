@@ -1,7 +1,7 @@
 
 /// <reference types="vite/client" />
 
-// Extend the Window interface to include gtag_report_conversion
+// Updated interface to match our Google Ads tracking implementation
 interface Window {
   gtag_report_conversion: (url?: string) => boolean;
   gtag?: (...args: any[]) => void;

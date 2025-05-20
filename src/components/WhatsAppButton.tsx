@@ -23,7 +23,7 @@ const WhatsAppButton = ({
 }: WhatsAppButtonProps) => {
   // The phone number to contact - ensure it's formatted correctly for WhatsApp
   // Format: Country code without + and remove any spaces, dashes, parentheses
-  const phoneNumber = "5521999195838";
+  const phoneNumber = "5521988384869"; // Updated to the number in your specifications
   const message = customMessage || "";
   const encodedMessage = encodeURIComponent(message);
   
@@ -35,7 +35,7 @@ const WhatsAppButton = ({
   // Default text if no custom text is provided
   const defaultText = "Falar no WhatsApp";
 
-  // Handler to track WhatsApp button clicks using GTM
+  // Handler to track WhatsApp button clicks using Google Ads conversion tracking
   const handleWhatsAppClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     
@@ -49,16 +49,8 @@ const WhatsAppButton = ({
       });
     }
     
-    // Garantindo que a função existe e tem um fallback seguro
-    if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
-      // Use the gtag_report_conversion function
-      return window.gtag_report_conversion(whatsAppUrl);
-    } else {
-      // Fallback: navigate directly if the function isn't available (debug mode or other issue)
-      console.warn('gtag_report_conversion não está disponível, redirecionando diretamente');
-      window.open(whatsAppUrl, '_blank', 'noopener,noreferrer');
-      return false;
-    }
+    // Use the updated Google Ads conversion tracking
+    return gtag_report_conversion(whatsAppUrl);
   };
 
   return (
