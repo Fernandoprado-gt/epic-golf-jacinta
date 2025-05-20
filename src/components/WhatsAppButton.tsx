@@ -12,13 +12,7 @@ interface WhatsAppButtonProps {
   centered?: boolean;
 }
 
-// Add Window interface augmentation for TypeScript
-declare global {
-  interface Window {
-    dataLayer: any[];
-    gtag_report_conversion: (url?: string) => boolean;
-  }
-}
+// Note: We're removing the Window interface declaration here since it's already in vite-env.d.ts
 
 const WhatsAppButton = ({ 
   className, 
