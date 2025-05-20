@@ -40,11 +40,11 @@ const WhatsAppButton = ({
       target="_blank"
       rel="noopener noreferrer"
       className={cn(
-        "font-semibold flex items-center gap-2 py-3 md:py-4 lg:py-6 px-3 md:px-5 text-sm md:text-base transition-all duration-300 shadow-md hover:shadow-lg btn-hover-effect",
+        "font-semibold flex items-center justify-center gap-2 py-3 md:py-4 lg:py-5 px-4 md:px-6 text-sm md:text-base transition-all duration-300 shadow-md hover:shadow-lg rounded-md",
         // Semi-transparent background for better readability
         inverted 
-          ? "bg-white/95 text-epic-blue hover:bg-epic-gold hover:text-white" 
-          : "bg-epic-gold/95 text-white hover:bg-white hover:text-epic-blue",
+          ? "bg-white text-epic-blue hover:bg-epic-gold hover:text-white border border-epic-gold" 
+          : "bg-epic-gold text-white hover:bg-epic-blue hover:text-white",
         // Center the button if centered prop is true
         centered ? "mx-auto" : "",
         className
