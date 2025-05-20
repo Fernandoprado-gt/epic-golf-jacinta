@@ -1,5 +1,5 @@
 
-import { ArrowRight, MessageSquare } from "lucide-react";
+import { ArrowRight, MessageSquare, WhatsApp } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface WhatsAppButtonProps {
@@ -41,7 +41,7 @@ const WhatsAppButton = ({
   // Default text if no custom text is provided
   const defaultText = "Falar no WhatsApp";
 
-  // Handler to track WhatsApp button clicks
+  // Handler to track WhatsApp button clicks using GTM
   const handleWhatsAppClick = () => {
     // Push to dataLayer for GTM tracking
     if (typeof window !== 'undefined' && window.dataLayer) {
@@ -71,7 +71,7 @@ const WhatsAppButton = ({
         className
       )}
     >
-      <MessageSquare className="h-4 w-4 flex-shrink-0" />
+      <WhatsApp className="h-4 w-4 flex-shrink-0" />
       <span className="line-clamp-1">{buttonText || defaultText}</span>
       <ArrowRight className="h-4 w-4 flex-shrink-0" />
     </a>
