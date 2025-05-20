@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight, MessageSquare } from "lucide-react";
+import { ArrowRight, WhatsApp } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface WhatsAppButtonProps {
@@ -30,7 +30,7 @@ const WhatsAppButton = ({
     const message = customMessage || "";
     const encodedMessage = encodeURIComponent(message);
     
-    // Use the official wa.me format
+    // Build the standard wa.me link format
     const whatsAppUrl = message 
       ? `https://wa.me/${phoneNumber}?text=${encodedMessage}`
       : `https://wa.me/${phoneNumber}`;
@@ -42,7 +42,7 @@ const WhatsAppButton = ({
       return window.gtag_report_conversion(whatsAppUrl);
     } else {
       // Fallback in case the function is not available
-      window.location.href = whatsAppUrl;
+      window.open(whatsAppUrl, '_blank', 'noopener,noreferrer');
     }
   };
 
@@ -65,7 +65,7 @@ const WhatsAppButton = ({
         className
       )}
     >
-      <MessageSquare className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
+      <WhatsApp className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
       <span className="line-clamp-1">{buttonText || defaultText}</span>
       <ArrowRight className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
     </Button>
