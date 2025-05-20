@@ -12,6 +12,23 @@
     </script>
     <!-- End Google Tag Manager -->
     
+    <!-- Google Ads Conversion Tracking -->
+    <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-11491239026/_0qpCOWfp8gaEPLIuecq',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+    <!-- End Google Ads Conversion Tracking -->
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Epic Golf Residence – Apartamentos e Coberturas no Golfe Olímpico da Barra</title>

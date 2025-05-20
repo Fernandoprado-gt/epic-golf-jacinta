@@ -22,7 +22,9 @@ const WhatsAppButton = ({
   buttonText,
   centered = true
 }: WhatsAppButtonProps) => {
-  const handleWhatsAppClick = () => {
+  const handleWhatsAppClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    
     // Use consistent phone number across the site
     const phoneNumber = "5521988384869"; 
     const message = customMessage || "";
@@ -32,8 +34,16 @@ const WhatsAppButton = ({
     const whatsAppUrl = message 
       ? `https://wa.me/${phoneNumber}?text=${encodedMessage}`
       : `https://wa.me/${phoneNumber}`;
-      
-    window.open(whatsAppUrl, "_blank");
+    
+    // Use the gtag_report_conversion function for conversion tracking
+    // The function is defined in index.html
+    if (typeof window !== 'undefined' && window.gtag_report_conversion) {
+      return window.gtag_report_conversion(whatsAppUrl);
+    } else {
+      // Fallback in case the function is not available
+      window.open(whatsAppUrl, "_blank");
+      return false;
+    }
   };
 
   // Default text if no custom text is provided
