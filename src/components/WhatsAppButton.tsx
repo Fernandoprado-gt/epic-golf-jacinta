@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, WhatsApp } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface WhatsAppButtonProps {
@@ -23,9 +23,16 @@ const WhatsAppButton = ({
   centered = true
 }: WhatsAppButtonProps) => {
   const handleWhatsAppClick = () => {
+    // Use consistent phone number across the site
+    const phoneNumber = "5521988384869"; 
     const message = customMessage || "";
     const encodedMessage = encodeURIComponent(message);
-    const whatsAppUrl = `https://wa.me/5521988384869?text=${encodedMessage}`;
+    
+    // Use the official wa.me format
+    const whatsAppUrl = message 
+      ? `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+      : `https://wa.me/${phoneNumber}`;
+      
     window.open(whatsAppUrl, "_blank");
   };
 
@@ -48,6 +55,7 @@ const WhatsAppButton = ({
         className
       )}
     >
+      <WhatsApp className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
       <span className="line-clamp-1">{buttonText || defaultText}</span>
       <ArrowRight className="h-4 w-4 md:h-5 md:w-5 flex-shrink-0" />
     </Button>
