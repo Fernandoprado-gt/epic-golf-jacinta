@@ -34,11 +34,25 @@ const WhatsAppButton = ({
   // Default text if no custom text is provided
   const defaultText = "Falar no WhatsApp";
 
+  // Handler to track WhatsApp button clicks
+  const handleWhatsAppClick = () => {
+    // Push to dataLayer for GTM tracking
+    if (typeof window !== 'undefined' && window.dataLayer) {
+      window.dataLayer.push({
+        'event': 'whatsapp_click',
+        'whatsapp_text': buttonText || defaultText,
+        'whatsapp_phone': phoneNumber,
+        'whatsapp_message': message
+      });
+    }
+  };
+
   return (
     <a 
       href={whatsAppUrl}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={handleWhatsAppClick}
       className={cn(
         "font-semibold flex items-center justify-center gap-2 py-2 md:py-3 px-4 md:px-5 text-sm transition-all duration-300 shadow-sm hover:shadow-md rounded-md",
         // Semi-transparent background for better readability
