@@ -16,6 +16,7 @@ interface WhatsAppButtonProps {
 declare global {
   interface Window {
     dataLayer: any[];
+    gtag_report_conversion: (url?: string) => boolean;
   }
 }
 
@@ -43,7 +44,9 @@ const WhatsAppButton = ({
   const defaultText = "Falar no WhatsApp";
 
   // Handler to track WhatsApp button clicks using GTM
-  const handleWhatsAppClick = () => {
+  const handleWhatsAppClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    
     // Push to dataLayer for GTM tracking
     if (typeof window !== 'undefined' && window.dataLayer) {
       window.dataLayer.push({
@@ -52,6 +55,14 @@ const WhatsAppButton = ({
         'whatsapp_phone': phoneNumber,
         'whatsapp_message': message
       });
+    }
+    
+    // Call Google Ads conversion tracking function
+    if (typeof window !== 'undefined' && window.gtag_report_conversion) {
+      return window.gtag_report_conversion(whatsAppUrl);
+    } else {
+      window.open(whatsAppUrl, '_blank', 'noopener,noreferrer');
+      return false;
     }
   };
 
