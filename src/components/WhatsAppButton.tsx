@@ -25,8 +25,8 @@ const WhatsAppButton = ({
   const handleWhatsAppClick = (e: React.MouseEvent) => {
     e.preventDefault();
     
-    // Use consistent phone number across the site
-    const phoneNumber = "5521988384869"; 
+    // Use the corrected phone number as requested
+    const phoneNumber = "5521999121958"; 
     const message = customMessage || "";
     const encodedMessage = encodeURIComponent(message);
     
@@ -35,15 +35,9 @@ const WhatsAppButton = ({
       ? `https://wa.me/${phoneNumber}?text=${encodedMessage}`
       : `https://wa.me/${phoneNumber}`;
     
-    // Use the gtag_report_conversion function which handles both:
-    // 1. Triggering the conversion tag
-    // 2. Redirecting the user
-    if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
-      return window.gtag_report_conversion(whatsAppUrl);
-    } else {
-      // Fallback in case the function is not available
-      window.open(whatsAppUrl, '_blank', 'noopener,noreferrer');
-    }
+    // Open in a new tab directly instead of using gtag_report_conversion
+    // This ensures the button works regardless of Google tag availability
+    window.open(whatsAppUrl, '_blank', 'noopener,noreferrer');
   };
 
   // Default text if no custom text is provided
