@@ -19,7 +19,7 @@
     
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     
-    <!-- Google tag (gtag.js) - Updated for better Google Ads integration -->
+    <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17084581310"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -75,24 +75,18 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
     
-    <!-- Updated Google Ads Conversion Tracking -->
+    <!-- Event snippet for Lead Whatsapp conversion -->
     <script>
     function gtag_report_conversion(url) {
-      try {
-        gtag('event', 'conversion', {
-          'send_to': 'AW-17084581310/xjrHCLKGs8oaEL6LyNI_',
-          'event_callback': function() {
-            if (typeof(url) !== 'undefined') {
-              window.location.href = url;
-            }
-          }
-        });
-      } catch (e) {
-        console.warn('Erro ao reportar conversão:', e);
+      var callback = function () {
         if (typeof(url) !== 'undefined') {
-          window.location.href = url;
+          window.location = url;
         }
-      }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17084581310/xjrHCLKGs8oaEL6LyNI_',
+        'event_callback': callback
+      });
       return false;
     }
     </script>

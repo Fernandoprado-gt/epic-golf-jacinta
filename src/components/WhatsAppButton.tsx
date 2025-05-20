@@ -28,9 +28,10 @@ const WhatsAppButton = ({
   const encodedMessage = encodeURIComponent(message);
   
   // Build the WhatsApp link with the correct format
+  // Using wa.me format as requested
   const whatsAppUrl = message 
-    ? `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`
-    : `https://api.whatsapp.com/send?phone=${phoneNumber}`;
+    ? `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+    : `https://wa.me/${phoneNumber}`;
 
   // Default text if no custom text is provided
   const defaultText = "Falar no WhatsApp";
@@ -49,12 +50,11 @@ const WhatsAppButton = ({
       });
     }
     
-    // Use the updated Google Ads conversion tracking with safety checks
+    // Use the updated Google Ads conversion tracking
     if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
       return window.gtag_report_conversion(whatsAppUrl);
     } else {
       // Fallback if the function is not available
-      console.warn('gtag_report_conversion function not found, performing direct redirect');
       window.location.href = whatsAppUrl;
       return false;
     }
