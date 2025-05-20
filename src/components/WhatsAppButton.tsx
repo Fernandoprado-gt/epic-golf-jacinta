@@ -12,8 +12,6 @@ interface WhatsAppButtonProps {
   centered?: boolean;
 }
 
-// Note: We're removing the Window interface declaration here since it's already in vite-env.d.ts
-
 const WhatsAppButton = ({ 
   className, 
   variant = "default", 
@@ -51,8 +49,16 @@ const WhatsAppButton = ({
       });
     }
     
-    // Use the updated gtag_report_conversion function
-    return window.gtag_report_conversion(whatsAppUrl);
+    // Garantindo que a função existe e tem um fallback seguro
+    if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
+      // Use the gtag_report_conversion function
+      return window.gtag_report_conversion(whatsAppUrl);
+    } else {
+      // Fallback: navigate directly if the function isn't available (debug mode or other issue)
+      console.warn('gtag_report_conversion não está disponível, redirecionando diretamente');
+      window.open(whatsAppUrl, '_blank', 'noopener,noreferrer');
+      return false;
+    }
   };
 
   return (
