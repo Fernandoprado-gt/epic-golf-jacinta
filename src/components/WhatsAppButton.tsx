@@ -12,6 +12,13 @@ interface WhatsAppButtonProps {
   centered?: boolean;
 }
 
+// Add Window interface augmentation for TypeScript
+declare global {
+  interface Window {
+    dataLayer: any[];
+  }
+}
+
 const WhatsAppButton = ({ 
   className, 
   variant = "default", 
