@@ -1,5 +1,5 @@
 
-import { ArrowRight, MessageSquare, WhatsApp } from "lucide-react";
+import { ArrowRight, MessageSquare } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface WhatsAppButtonProps {
@@ -71,7 +71,7 @@ const WhatsAppButton = ({
         className
       )}
     >
-      <WhatsApp className="h-4 w-4 flex-shrink-0" />
+      <MessageSquare className="h-4 w-4 flex-shrink-0" />
       <span className="line-clamp-1">{buttonText || defaultText}</span>
       <ArrowRight className="h-4 w-4 flex-shrink-0" />
     </a>
