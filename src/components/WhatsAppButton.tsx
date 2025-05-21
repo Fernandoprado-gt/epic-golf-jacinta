@@ -50,7 +50,7 @@ const WhatsAppButton = ({
       });
     }
     
-    // Use the updated Google Ads conversion tracking
+    // Use the conversion tracking
     if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
       return window.gtag_report_conversion(whatsAppUrl);
     } else {
