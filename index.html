@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -35,15 +36,21 @@
       gtag('config', 'AW-17084581310');
     </script>
     
-    <!-- Google Tag Manager -->
+    <!-- Event snippet for Contato conversion page -->
     <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id=GTM-PCTWT5PK'+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PCTWT5PK');
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) !== 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17084581310/UusiCN2AvssaEL6LyNI_',
+        'event_callback': callback
+      });
+      return true; // importante para não bloquear a navegação
+    }
     </script>
-    <!-- End Google Tag Manager -->
     
     <!-- Structured data for rich results -->
     <script type="application/ld+json">
@@ -68,22 +75,6 @@
         "telephone": "+55 21 99919-5838",
         "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 09:00-18:00"
       }
-    </script>
-    
-    <!-- Event snippet for Contato conversion page -->
-    <script>
-    function gtag_report_conversion(url) {
-      var callback = function () {
-        if (typeof(url) !== 'undefined') {
-          window.location = url;
-        }
-      };
-      gtag('event', 'conversion', {
-        'send_to': 'AW-17084581310/UusiCN2AvssaEL6LyNI_',
-        'event_callback': callback
-      });
-      return true; // importante para não bloquear a navegação
-    }
     </script>
   </head>
 
