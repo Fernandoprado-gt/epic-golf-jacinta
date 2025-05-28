@@ -1,6 +1,5 @@
 
 import WhatsAppButton from "@/components/WhatsAppButton";
-import { ArrowRight } from "lucide-react";
 
 const CtaSection = () => {
   return (
@@ -18,26 +17,6 @@ const CtaSection = () => {
           className="md:min-w-[320px] text-center justify-center mb-4 bg-epic-gold hover:bg-white hover:text-epic-blue" 
           buttonText="Falar com um Especialista" 
         />
-        
-        {/* Social Proof */}
-        <div className="mt-8 text-sm text-white/80">
-          <p className="font-medium">Junte-se às dezenas de pessoas que já garantiram seu espaço</p>
-          <div className="flex justify-center mt-3 space-x-1">
-            <span className="inline-block w-3 h-3 bg-epic-gold rounded-full"></span>
-            <span className="inline-block w-3 h-3 bg-epic-gold rounded-full"></span>
-            <span className="inline-block w-3 h-3 bg-epic-gold rounded-full"></span>
-            <span className="inline-block w-3 h-3 bg-epic-gold rounded-full"></span>
-            <span className="inline-block w-3 h-3 bg-epic-gold rounded-full"></span>
-          </div>
-          <p className="mt-2">★★★★★ <span className="font-medium">5.0/5.0</span> - Avaliação dos nossos clientes</p>
-        </div>
-        
-        {/* Urgency Element */}
-        <div className="mt-8 border border-white/20 rounded-md p-4 inline-block bg-epic-blue/50 backdrop-blur-sm">
-          <p className="text-epic-gold font-semibold flex items-center justify-center gap-2">
-            Unidades limitadas disponíveis <ArrowRight className="h-4 w-4" />
-          </p>
-        </div>
       </div>
     </section>
   );
