@@ -24,14 +24,15 @@ const WhatsAppButton = ({
   // The phone number to contact - ensure it's formatted correctly for WhatsApp
   // Format: Country code without + and remove any spaces, dashes, parentheses
   const phoneNumber = "5521999195838"; // Updated phone number
-  const message = customMessage || "";
+  
+  // Default message for all WhatsApp buttons
+  const defaultMessage = "Olá Jacinta, vi o seu site do Epic no google e gostaria de mais informações desse produto.";
+  const message = customMessage || defaultMessage;
   const encodedMessage = encodeURIComponent(message);
   
   // Build the WhatsApp link with the correct format
   // Using wa.me format as requested
-  const whatsAppUrl = message 
-    ? `https://wa.me/${phoneNumber}?text=${encodedMessage}`
-    : `https://wa.me/${phoneNumber}`;
+  const whatsAppUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
   // Default text if no custom text is provided
   const defaultText = "Falar no WhatsApp";

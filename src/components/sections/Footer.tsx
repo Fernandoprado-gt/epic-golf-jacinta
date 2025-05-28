@@ -5,7 +5,9 @@ const Footer = () => {
   // Handler for WhatsApp click in the footer
   const handleWhatsAppClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const whatsAppUrl = "https://wa.me/5521999195838";
+    const defaultMessage = "Olá Jacinta, vi o seu site do Epic no google e gostaria de mais informações desse produto.";
+    const encodedMessage = encodeURIComponent(defaultMessage);
+    const whatsAppUrl = `https://wa.me/5521999195838?text=${encodedMessage}`;
     
     if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
       return window.gtag_report_conversion(whatsAppUrl);
@@ -34,7 +36,7 @@ const Footer = () => {
             <div className="flex items-center gap-2">
               <Phone className="h-4 w-4 text-epic-gold" />
               <a 
-                href="https://wa.me/5521999195838"
+                href="#"
                 target="_blank" 
                 rel="noopener noreferrer"
                 onClick={handleWhatsAppClick}
