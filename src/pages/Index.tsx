@@ -9,6 +9,7 @@ import FaqSectionComponent from "@/components/sections/FaqSection";
 import CtaSection from "@/components/sections/CtaSection";
 import Footer from "@/components/sections/Footer";
 import Header from "@/components/Header";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { galleryImages, faqItems } from "@/components/sections/constants";
 
 const Index = () => {
@@ -84,6 +85,7 @@ const Index = () => {
       <FaqSectionComponent faqs={faqItems} />
       <CtaSection />
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 };
@@ -93,6 +95,7 @@ declare global {
   interface Window {
     scrollTracked25?: boolean;
     scrollTracked50?: boolean;
+    scrollTracked75?: boolean;
     scrollTracked75?: boolean;
     scrollTracked100?: boolean;
   }

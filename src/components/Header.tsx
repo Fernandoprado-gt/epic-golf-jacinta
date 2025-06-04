@@ -64,8 +64,8 @@ const Header = ({
       scrolled ? "bg-epic-blue/95 shadow-md" : "bg-transparent", 
       className
     )}>
-      <div className="container max-w-7xl mx-auto flex justify-between items-center">
-        <div className="text-xl md:text-2xl font-bold text-white">
+      <div className="container max-w-7xl mx-auto flex justify-between items-center md:justify-center">
+        <div className="text-xl md:text-2xl font-bold text-white md:absolute md:left-6">
           Epic Golf
         </div>
         
@@ -134,20 +134,6 @@ const Header = ({
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-        </div>
-        
-        <div className="hidden md:block">
-          <Button 
-            onClick={handleFormClick}
-            className={cn(
-              "py-2 px-4 text-sm rounded-md transition-all duration-300",
-              scrolled 
-                ? "bg-epic-gold hover:bg-white hover:text-epic-blue text-epic-blue" 
-                : "bg-epic-gold hover:bg-white hover:text-epic-blue text-epic-blue"
-            )}
-          >
-            Falar no WhatsApp
-          </Button>
         </div>
         
         <div className="md:hidden">
