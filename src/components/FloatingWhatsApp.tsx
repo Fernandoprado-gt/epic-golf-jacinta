@@ -1,5 +1,4 @@
 
-import { MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const FloatingWhatsApp = () => {
@@ -24,15 +23,19 @@ const FloatingWhatsApp = () => {
       onClick={handleWhatsAppClick}
       className={cn(
         "fixed bottom-6 right-6 z-50",
-        "bg-green-500 hover:bg-green-600 text-white",
+        "bg-green-500 hover:bg-green-600",
         "w-14 h-14 rounded-full shadow-lg hover:shadow-xl",
         "flex items-center justify-center",
         "transition-all duration-300 transform hover:scale-110",
-        "animate-pulse"
+        "overflow-hidden"
       )}
       aria-label="Falar no WhatsApp"
     >
-      <MessageCircle size={24} />
+      <img 
+        src="/lovable-uploads/571e4219-2dae-4783-8d62-fdc18dcd7520.png" 
+        alt="WhatsApp" 
+        className="w-8 h-8 object-contain"
+      />
     </button>
   );
 };
