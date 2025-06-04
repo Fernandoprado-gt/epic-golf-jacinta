@@ -17,7 +17,7 @@ export const useLeadFormSubmit = (form: UseFormReturn<LeadFormValues>) => {
       // Open WhatsApp with pre-filled message
       const message = "Olá, acabei de me cadastrar na página do Epic Golf Residence e gostaria de receber mais informações.";
       const encodedMessage = encodeURIComponent(message);
-      const whatsAppUrl = `https://wa.me/5521988384869?text=${encodedMessage}`;
+      const whatsAppUrl = `https://wa.me/5521999195838?text=${encodedMessage}`;
       
       toast.success("Formulário enviado com sucesso!", {
         description: "Você será redirecionado para o WhatsApp em instantes.",
