@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import WhatsAppButton from "./WhatsAppButton";
 import { NavigationMenu, NavigationMenuList, NavigationMenuItem, NavigationMenuLink } from "@/components/ui/navigation-menu";
 import { Home, Star, Image, MapPin, HelpCircle, Menu } from "lucide-react";
 
@@ -32,6 +31,21 @@ const Header = ({
   const handleNavClick = (sectionId: string) => {
     setMobileMenuOpen(false);
     const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+    }
+  };
+
+  const handleFormClick = () => {
+    setMobileMenuOpen(false);
+    const element = document.getElementById('lead-form');
     if (element) {
       const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
@@ -123,13 +137,17 @@ const Header = ({
         </div>
         
         <div className="hidden md:block">
-          <WhatsAppButton 
-            size="sm" 
-            className="py-2 px-4 text-sm rounded-md"
-            variant={scrolled ? "default" : "default"}
-            inverted={!scrolled}
-            buttonText="Falar no WhatsApp"
-          />
+          <Button 
+            onClick={handleFormClick}
+            className={cn(
+              "py-2 px-4 text-sm rounded-md transition-all duration-300",
+              scrolled 
+                ? "bg-epic-gold hover:bg-white hover:text-epic-blue text-epic-blue" 
+                : "bg-epic-gold hover:bg-white hover:text-epic-blue text-epic-blue"
+            )}
+          >
+            Falar no WhatsApp
+          </Button>
         </div>
         
         <div className="md:hidden">
@@ -181,7 +199,12 @@ const Header = ({
             >
               <HelpCircle size={18} /> Perguntas
             </a>
-            <WhatsAppButton className="w-full mt-2 py-2 px-3 text-sm" buttonText="Falar no WhatsApp" />
+            <Button
+              onClick={handleFormClick}
+              className="w-full mt-2 py-2 px-3 text-sm bg-epic-gold hover:bg-white hover:text-epic-blue text-epic-blue"
+            >
+              Falar no WhatsApp
+            </Button>
           </nav>
         </div>
       )}
