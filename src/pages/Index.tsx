@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import HeroSection from "@/components/sections/HeroSection";
@@ -95,7 +94,6 @@ declare global {
   interface Window {
     scrollTracked25?: boolean;
     scrollTracked50?: boolean;
-    scrollTracked75?: boolean;
     scrollTracked75?: boolean;
     scrollTracked100?: boolean;
   }
