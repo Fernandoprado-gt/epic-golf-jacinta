@@ -52,6 +52,22 @@
     }
     </script>
     
+    <!-- Event snippet for lead cadastrado. conversion page -->
+    <script>
+    function gtag_report_conversion_lead(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+          'send_to': 'AW-17084581310/7W-cCN_Y99IaEL6LyNI_',
+          'event_callback': callback
+      });
+      return false;
+    }
+    </script>
+    
     <!-- Structured data for rich results -->
     <script type="application/ld+json">
       {

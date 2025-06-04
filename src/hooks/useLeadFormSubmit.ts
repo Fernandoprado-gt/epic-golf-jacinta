@@ -23,6 +23,11 @@ export const useLeadFormSubmit = (form: UseFormReturn<LeadFormValues>) => {
         description: "Você será redirecionado para o WhatsApp em instantes.",
       });
       
+      // Call Google Ads conversion tracking for lead form submission
+      if (typeof window !== 'undefined' && window.gtag_report_conversion_lead) {
+        window.gtag_report_conversion_lead();
+      }
+      
       setTimeout(() => {
         window.open(whatsAppUrl, "_blank");
       }, 1500);
@@ -33,3 +38,10 @@ export const useLeadFormSubmit = (form: UseFormReturn<LeadFormValues>) => {
 
   return { isSubmitting, onSubmit };
 };
+
+// Extend Window interface to include the new conversion function
+declare global {
+  interface Window {
+    gtag_report_conversion_lead?: (url?: string) => boolean;
+  }
+}
