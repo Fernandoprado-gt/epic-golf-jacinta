@@ -1,5 +1,5 @@
 
-import WhatsAppButton from "@/components/WhatsAppButton";
+import FormButton from "@/components/FormButton";
 
 const CtaSection = () => {
   return (
@@ -13,7 +13,7 @@ const CtaSection = () => {
         </p>
         
         {/* Primary CTA Button */}
-        <WhatsAppButton 
+        <FormButton 
           className="md:min-w-[320px] text-center justify-center mb-4 bg-epic-gold hover:bg-white hover:text-epic-blue" 
           buttonText="Falar com um Especialista" 
         />

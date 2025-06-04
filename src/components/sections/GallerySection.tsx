@@ -1,6 +1,6 @@
 
 import ImageGallery from "@/components/ImageGallery";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import FormButton from "@/components/FormButton";
 
 interface GallerySectionProps {
   images: {
@@ -27,7 +27,7 @@ const GallerySection = ({ images }: GallerySectionProps) => {
         <ImageGallery images={images} />
         
         <div className="mt-12 md:mt-16 text-center">
-          <WhatsAppButton 
+          <FormButton 
             buttonText="Quero Saber Mais" 
             className="md:min-w-[280px] bg-epic-gold text-white"
           />

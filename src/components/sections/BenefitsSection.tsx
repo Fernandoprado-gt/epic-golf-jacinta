@@ -1,6 +1,6 @@
 
 import BenefitCard from "@/components/BenefitCard";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import FormButton from "@/components/FormButton";
 import { MapPin, Building, Users, Dumbbell, Anchor, Waves } from "lucide-react";
 
 const BenefitsSection = () => {
@@ -26,8 +26,8 @@ const BenefitsSection = () => {
         </div>
         
         <div className="mt-16 text-center">
-          <WhatsAppButton 
-            buttonText="Quero Falar no WhatsApp" 
+          <FormButton 
+            buttonText="Quero Saber Mais" 
             className="md:min-w-[280px] bg-epic-gold text-white"
           />
         </div>

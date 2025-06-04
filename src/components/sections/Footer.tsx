@@ -2,21 +2,6 @@
 import { Phone, MapPin, Instagram, Facebook } from "lucide-react";
 
 const Footer = () => {
-  // Handler for WhatsApp click in the footer
-  const handleWhatsAppClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    const defaultMessage = "Olá Jacinta, vi o seu site do Epic no google e gostaria de mais informações desse produto.";
-    const encodedMessage = encodeURIComponent(defaultMessage);
-    const whatsAppUrl = `https://wa.me/5521999195838?text=${encodedMessage}`;
-    
-    if (typeof window !== 'undefined' && typeof window.gtag_report_conversion === 'function') {
-      return window.gtag_report_conversion(whatsAppUrl);
-    } else {
-      window.location.href = whatsAppUrl;
-      return false;
-    }
-  };
-
   return (
     <footer className="py-8 bg-epic-blue text-white/70">
       <div className="container max-w-7xl mx-auto px-6">
@@ -35,15 +20,7 @@ const Footer = () => {
             
             <div className="flex items-center gap-2">
               <Phone className="h-4 w-4 text-epic-gold" />
-              <a 
-                href="#"
-                target="_blank" 
-                rel="noopener noreferrer"
-                onClick={handleWhatsAppClick}
-                className="hover:text-epic-gold transition-colors"
-              >
-                +55 21 99919-5838
-              </a>
+              <p className="text-white/70">+55 21 99919-5838</p>
             </div>
             
             <div className="flex items-center gap-3">

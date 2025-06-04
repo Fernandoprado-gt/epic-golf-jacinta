@@ -1,5 +1,4 @@
 
-import WhatsAppButton from "@/components/WhatsAppButton";
 import LeadForm from "@/components/LeadForm";
 
 const HeroSection = () => {
@@ -25,15 +24,6 @@ const HeroSection = () => {
             <h2 className="text-lg sm:text-xl md:text-2xl text-white font-medium mb-6 break-normal">
               Apartamentos, Gardens e Coberturas de até 208m² no ponto mais nobre da Barra: o Golfe Olímpico
             </h2>
-            
-            {/* Desktop WhatsApp button positioned below text */}
-            <div className="mt-8">
-              <WhatsAppButton 
-                buttonText="Falar no WhatsApp"
-                centered={false}
-                className="shadow-lg bg-epic-gold text-white hover:bg-white hover:text-epic-blue"
-              />
-            </div>
           </div>
           
           {/* Registration Form replacing the building image */}

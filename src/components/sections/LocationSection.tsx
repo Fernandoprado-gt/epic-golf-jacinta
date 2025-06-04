@@ -1,6 +1,6 @@
 
 import LocationMap from "@/components/LocationMap";
-import WhatsAppButton from "@/components/WhatsAppButton";
+import FormButton from "@/components/FormButton";
 
 const LocationSection = () => {
   return (
@@ -52,9 +52,9 @@ const LocationSection = () => {
               </ul>
             </div>
             
-            <WhatsAppButton 
+            <FormButton 
               className="w-full bg-epic-gold text-white hover:bg-white hover:text-epic-blue" 
-              buttonText="Ver Mais no WhatsApp"
+              buttonText="Ver Mais Informações"
               centered={false} 
             />
           </div>
