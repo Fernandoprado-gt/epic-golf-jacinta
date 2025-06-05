@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { Toaster } from "@/components/ui/sonner";
 import HeroSection from "@/components/sections/HeroSection";
@@ -8,7 +9,6 @@ import FaqSectionComponent from "@/components/sections/FaqSection";
 import CtaSection from "@/components/sections/CtaSection";
 import Footer from "@/components/sections/Footer";
 import Header from "@/components/Header";
-import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import { galleryImages, faqItems } from "@/components/sections/constants";
 
 const Index = () => {
@@ -84,7 +84,6 @@ const Index = () => {
       <FaqSectionComponent faqs={faqItems} />
       <CtaSection />
       <Footer />
-      <FloatingWhatsApp />
     </div>
   );
 };
