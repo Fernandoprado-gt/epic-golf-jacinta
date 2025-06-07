@@ -12,9 +12,9 @@ export const useLeadFormSubmit = (form: UseFormReturn<LeadFormValues>) => {
     setIsSubmitting(true);
     
     try {
-      // Save lead to Supabase
+      // Save lead to Supabase using the new jacinta_leads_epic table
       const { error } = await supabase
-        .from('leads')
+        .from('jacinta_leads_epic')
         .insert({
           name: values.name,
           whatsapp: values.whatsapp,

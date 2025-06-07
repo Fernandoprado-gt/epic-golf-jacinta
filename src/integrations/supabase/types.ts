@@ -9,6 +9,30 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      jacinta_leads_epic: {
+        Row: {
+          created_at: string
+          id: string
+          interest: string
+          name: string
+          whatsapp: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          interest: string
+          name: string
+          whatsapp: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          interest?: string
+          name?: string
+          whatsapp?: string
+        }
+        Relationships: []
+      }
       leads: {
         Row: {
           created_at: string
@@ -33,12 +57,101 @@ export type Database = {
         }
         Relationships: []
       }
+      leads_cia_do_pontal: {
+        Row: {
+          created_at: string
+          email: string | null
+          id: string
+          interest: string
+          name: string
+          whatsapp: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          interest: string
+          name: string
+          whatsapp: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          interest?: string
+          name?: string
+          whatsapp?: string
+        }
+        Relationships: []
+      }
+      leads_leticia_grand_quartier: {
+        Row: {
+          created_at: string
+          email: string | null
+          id: string
+          interest: string
+          name: string
+          whatsapp: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          interest: string
+          name: string
+          whatsapp: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          interest?: string
+          name?: string
+          whatsapp?: string
+        }
+        Relationships: []
+      }
+      leads_marta_beinrio: {
+        Row: {
+          created_at: string
+          email: string | null
+          id: string
+          interest: string
+          name: string
+          whatsapp: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          interest?: string
+          name: string
+          whatsapp: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          id?: string
+          interest?: string
+          name?: string
+          whatsapp?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      insert_leads: {
+        Args: {
+          p_nome: string
+          p_telefone: string
+          p_interesse: string
+          p_email?: string
+        }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never
